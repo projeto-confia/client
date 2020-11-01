@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main should render 1`] = `
+<main>
+  <h1>
+    Confia
+  </h1>
+</main>
+`
