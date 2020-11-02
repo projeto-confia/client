@@ -16,12 +16,14 @@
     }
   },
   "lint-staged": {
-    "src/**/*": [
+    "src/**/*.ts(x)": [
       "yarn lint --fix",
       "yarn test --findRelatedTests --bail"
     ]
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
     "next": "10.0.0",
     "react": "17.0.1",
     "react-dom": "17.0.1"

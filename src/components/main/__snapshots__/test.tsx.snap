@@ -2,8 +2,24 @@
 
 exports[`Main should render 1`] = `
 <main>
-  <h1>
+  <h1
+    class="MuiTypography-root MuiTypography-h1"
+  >
     Confia
   </h1>
+  <button
+    class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+    tabindex="0"
+    type="button"
+  >
+    <span
+      class="MuiButton-label"
+    >
+      Ok, entendido!
+    </span>
+    <span
+      class="MuiTouchRipple-root"
+    />
+  </button>
 </main>
-`
+`;
