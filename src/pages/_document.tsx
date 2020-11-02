@@ -15,6 +15,11 @@ export default class AppDocument extends Document {
           <meta name="application-name" content="CONFIA" />
           <meta name="description" content="Compartilhe com segurança" />
           <link rel="icon" href="/favicon.ico" />
+          <link rel="manifest" href="/manifest.json" />
+          <meta
+            name="description"
+            content="Compartilhe informações com segurança de que são verdadeiras."
+          />
         </Head>
         <body>
           <Main />
