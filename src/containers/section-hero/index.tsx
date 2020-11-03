@@ -24,6 +24,9 @@ const useStyles = makeStyles((theme: Theme) =>
     image: {
       width: '50%',
     },
+    cta: {
+      marginTop: `${theme.spacing(4)}px`,
+    },
   })
 )
 
@@ -44,7 +47,7 @@ const SectionHero = ({
         <Typography component="h2" variant="subtitle1">
           {description}
         </Typography>
-        <Button variant="contained" color="primary">
+        <Button variant="contained" color="primary" className={classes.cta}>
           {label}
         </Button>
       </div>
