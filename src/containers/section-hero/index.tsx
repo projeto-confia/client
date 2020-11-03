@@ -5,6 +5,8 @@ import {
   makeStyles,
   Theme,
   createStyles,
+  useTheme,
+  useMediaQuery,
 } from '@material-ui/core'
 
 import { LandingPageHeaderProps } from '@/types'
@@ -13,15 +15,23 @@ import { getImageUrl } from 'src/utils/getImageUrl'
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     box: {
+      position: 'relative',
       display: 'flex',
       flexFlow: 'row nowrap',
       alignItems: 'center',
       justifyContent: 'space-between',
-      maxWidth: theme.breakpoints.width('md'),
       margin: '0 auto',
-      padding: `0 ${theme.spacing(4)}px`,
+      padding: `${theme.spacing(4)}px`,
     },
     image: {
+      position: 'absolute',
+      width: '50%',
+      top: -10,
+      right: 0,
+      zIndex: -1,
+      opacity: 0.1,
+    },
+    imageSm: {
       width: '50%',
     },
     cta: {
@@ -37,6 +47,8 @@ const SectionHero = ({
   image: { url, alternativeText },
 }: LandingPageHeaderProps) => {
   const classes = useStyles()
+  const theme = useTheme()
+  const isWidthUpToSm = useMediaQuery(theme.breakpoints.up('sm'))
 
   return (
     <Box component="section" className={classes.box}>
@@ -52,7 +64,7 @@ const SectionHero = ({
         </Button>
       </div>
       <img
-        className={classes.image}
+        className={isWidthUpToSm ? classes.imageSm : classes.image}
         src={getImageUrl(url)}
         alt={alternativeText}
       />
