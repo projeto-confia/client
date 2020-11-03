@@ -16,5 +16,6 @@ export type LandingPageHeaderProps = {
 }
 
 export type LandingPageProps = {
+  logo: ImageProps
   header: LandingPageHeaderProps
 }
