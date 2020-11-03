@@ -7,9 +7,7 @@ import '../styles/globals.css'
 import theme from '../styles/theme'
 
 type Props = AppProps & {
-  Component: ComponentType & {
-    Layout: ComponentType
-  }
+  Component: ComponentType
 }
 
 function MyApp({ Component, pageProps }: Props) {
