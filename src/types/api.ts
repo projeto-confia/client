@@ -15,7 +15,19 @@ export type LandingPageHeaderProps = {
   image: ImageProps
 }
 
+export type ProcessStepProps = {
+  label: string
+  description: string
+  icon: ImageProps
+}
+
+export type SectionHowWorksProps = {
+  title: string
+  processSteps: ProcessStepProps[]
+}
+
 export type LandingPageProps = {
   logo: ImageProps
   header: LandingPageHeaderProps
+  sectionHowWorks: SectionHowWorksProps
 }
