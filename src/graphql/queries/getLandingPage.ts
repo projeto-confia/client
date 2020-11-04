@@ -17,6 +17,17 @@ const GET_LANDING_PAGE = /* GraphQL */ `
           alternativeText
         }
       }
+      sectionHowWorks {
+        title
+        processSteps {
+          label
+          icon {
+            url
+            alternativeText
+          }
+          description
+        }
+      }
     }
   }
 `
