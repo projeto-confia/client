@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProcessStep /> should render 1`] = `
+<article
+  class="MuiBox-root MuiBox-root-6 makeStyles-wrapper-1"
+>
+  <header
+    class="makeStyles-header-2"
+  >
+    <h2
+      class="MuiTypography-root makeStyles-label-3 MuiTypography-body1"
+    >
+      Step 01
+    </h2>
+  </header>
+  <div
+    class="MuiBox-root MuiBox-root-7 makeStyles-content-4"
+  >
+    <img
+      alt="A not found image"
+      class="makeStyles-image-5"
+      src="undefined/image.png"
+    />
+    <p
+      class="MuiTypography-root MuiTypography-body1"
+    >
+      &lt;p&gt;Some very descriptive description&lt;/p&gt;
+    </p>
+  </div>
+</article>
+`;
