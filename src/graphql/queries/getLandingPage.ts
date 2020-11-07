@@ -28,6 +28,15 @@ const GET_LANDING_PAGE = /* GraphQL */ `
           description
         }
       }
+      sectionAbout {
+        title
+        subtitle
+        description
+        image {
+          url
+          alternativeText
+        }
+      }
     }
   }
 `

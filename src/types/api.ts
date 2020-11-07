@@ -26,8 +26,16 @@ export type SectionHowWorksProps = {
   processSteps: ProcessStepProps[]
 }
 
+export type SectionAboutProps = {
+  title: string
+  subtitle: string
+  description: string
+  image: ImageProps
+}
+
 export type LandingPageProps = {
   logo: ImageProps
   header: LandingPageHeaderProps
   sectionHowWorks: SectionHowWorksProps
+  sectionAbout: SectionAboutProps
 }
