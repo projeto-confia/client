@@ -18,7 +18,7 @@ export const Basic: Story = (args: Partial<ProcessStepProps> | undefined) => (
 Basic.args = {
   label: 'Step 1',
   description:
-    '<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore</p>',
+    'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore',
   icon: {
     url: '/uploads/logo_gh_6679cd4dc2.svg',
     alternativeText: 'image not found',
