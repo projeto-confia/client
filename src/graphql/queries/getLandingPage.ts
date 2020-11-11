@@ -37,6 +37,16 @@ const GET_LANDING_PAGE = /* GraphQL */ `
           alternativeText
         }
       }
+      sectionSponsors {
+        title
+        sponsors {
+          name
+          logo {
+            url
+            alternativeText
+          }
+        }
+      }
     }
   }
 `

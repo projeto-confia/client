@@ -33,9 +33,20 @@ export type SectionAboutProps = {
   image: ImageProps
 }
 
+export type SponsorProps = {
+  name: string
+  logo: ImageProps
+}
+
+export type SectionSponsorsProps = {
+  title: string
+  sponsors: SponsorProps[]
+}
+
 export type LandingPageProps = {
   logo: ImageProps
   header: LandingPageHeaderProps
   sectionHowWorks: SectionHowWorksProps
   sectionAbout: SectionAboutProps
+  sectionSponsors: SectionSponsorsProps
 }
