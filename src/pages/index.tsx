@@ -1,8 +1,14 @@
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
+import { Container } from '@material-ui/core'
 
 import { Header } from '@/components'
-import { SectionHero, SectionHowWorks, SectionAbout } from '@/containers'
+import {
+  SectionHero,
+  SectionHowWorks,
+  SectionAbout,
+  SectionSponsors,
+} from '@/containers'
 import { LandingPageProps } from '@/types'
 import client from '../graphql/client'
 import GET_LANDING_PAGE from '../graphql/queries/getLandingPage'
@@ -12,6 +18,7 @@ const Home = ({
   header,
   sectionHowWorks,
   sectionAbout,
+  sectionSponsors,
 }: LandingPageProps) => (
   <>
     <Head>
@@ -20,9 +27,12 @@ const Home = ({
 
     <main>
       <Header image={logo} title="confia" showMenuButton={false} />
-      <SectionHero {...header} />
-      <SectionHowWorks {...sectionHowWorks} />
-      <SectionAbout {...sectionAbout} />
+      <Container maxWidth="lg">
+        <SectionHero {...header} />
+        <SectionHowWorks {...sectionHowWorks} />
+        <SectionAbout {...sectionAbout} />
+        <SectionSponsors {...sectionSponsors} />
+      </Container>
     </main>
   </>
 )
