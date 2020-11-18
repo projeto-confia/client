@@ -17,7 +17,6 @@ const SectionAbout = ({
       flexDirection={isUpToMd ? 'row' : 'column'}
       alignItems="center"
       justifyContent="space-between"
-      bgcolor={theme.palette.primary.main}
       component="section"
       p={4}
     >
