@@ -1,7 +1,8 @@
 import {
   makeStyles,
-  Theme,
   createStyles,
+  Theme,
+  Container,
   AppBar,
   Toolbar,
   IconButton,
@@ -47,28 +48,30 @@ const Header = ({
   const classes = useStyles()
 
   return (
-    <AppBar position="static" className={classes.root} color="default">
-      <Toolbar variant="regular">
-        {showMenuButton && (
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            aria-label="menu"
-            onClick={onMenuClick}
-          >
-            <MenuIcon />
-          </IconButton>
-        )}
+    <AppBar position="fixed" className={classes.root} color="default">
+      <Container maxWidth="lg">
+        <Toolbar variant="regular">
+          {showMenuButton && (
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              aria-label="menu"
+              onClick={onMenuClick}
+            >
+              <MenuIcon />
+            </IconButton>
+          )}
 
-        <img
-          className={classes.logo}
-          src={getImageUrl(url)}
-          alt={alternativeText}
-        />
-        <Typography variant="h4" component="h1" className={classes.title}>
-          {title}
-        </Typography>
-      </Toolbar>
+          <img
+            className={classes.logo}
+            src={getImageUrl(url)}
+            alt={alternativeText}
+          />
+          <Typography variant="h4" component="h1" className={classes.title}>
+            {title}
+          </Typography>
+        </Toolbar>
+      </Container>
     </AppBar>
   )
 }
