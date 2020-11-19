@@ -8,6 +8,6 @@ module.exports = withPWA({
     disable: !isProd,
   },
   images: {
-    domains: ['localhost'],
+    domains: ['localhost', 'confia-api.herokuapp.com'],
   },
 })
