@@ -8,6 +8,10 @@ module.exports = withPWA({
     disable: !isProd,
   },
   images: {
-    domains: ['localhost', 'confia-api.herokuapp.com'],
+    domains: [
+      'localhost',
+      'confia-api.herokuapp.com',
+      'stgconfiadev.blob.core.windows.net',
+    ],
   },
 })
