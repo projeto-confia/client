@@ -1,7 +1,6 @@
 import {
   Box,
   Typography,
-  Button,
   makeStyles,
   Theme,
   createStyles,
@@ -43,7 +42,6 @@ const useStyles = makeStyles((theme: Theme) =>
 const SectionHero = ({
   title,
   description,
-  button: { label },
   image: { url, alternativeText },
 }: LandingPageHeaderProps) => {
   const classes = useStyles()
@@ -59,9 +57,6 @@ const SectionHero = ({
         <Typography component="h2" variant="subtitle1">
           {description}
         </Typography>
-        <Button variant="contained" color="primary" className={classes.cta}>
-          {label}
-        </Button>
       </div>
       <img
         className={isWidthUpToSm ? classes.imageSm : classes.image}
