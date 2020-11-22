@@ -1,5 +1,5 @@
-#CONFIA - client frontend
-
+# CONFIA - client frontend
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/879e9020dc0e457ebd90b9c25b43a8b5)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=projeto-confia/client&amp;utm_campaign=Badge_Grade)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ee024973-8618-44df-b871-a3ae4f43b57f/deploy-status)](https://app.netlify.com/sites/confia-dev/deploys)
 
 ## Getting Started
