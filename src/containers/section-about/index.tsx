@@ -1,7 +1,7 @@
 import { Box, Typography, useMediaQuery, useTheme } from '@material-ui/core'
 
 import { SectionAboutProps } from '@/types'
-import { getImageUrl } from 'src/utils/getImageUrl'
+import { getImageUrl } from '../../utils/getImageUrl'
 
 const SectionAbout = ({
   title,
