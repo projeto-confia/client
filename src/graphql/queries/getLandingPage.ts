@@ -47,6 +47,21 @@ const GET_LANDING_PAGE = /* GraphQL */ `
           }
         }
       }
+      sectionTeam {
+        title
+        members {
+          name
+          role
+          photo {
+            url
+            alternativeText
+          }
+          socialNetworkLink {
+            socialNetwork
+            url
+          }
+        }
+      }
     }
   }
 `

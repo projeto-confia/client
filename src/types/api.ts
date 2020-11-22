@@ -1,3 +1,5 @@
+import { Nullable } from './nullable'
+
 export type ButtonLinkProps = {
   label: string
   url: string
@@ -43,10 +45,30 @@ export type SectionSponsorsProps = {
   sponsors: SponsorProps[]
 }
 
+export type SocialNetworkType = 'Facebook' | 'LinkedIn' | 'Lattes' | 'GitHub'
+
+export type SocialNetworkLinkProps = {
+  socialNetwork: SocialNetworkType
+  url: string
+}
+
+export type MemberProps = {
+  name: string
+  role: string
+  photo: ImageProps
+  socialNetworkLink: Nullable<SocialNetworkLinkProps[]>
+}
+
+export type SectionTeamProps = {
+  title: string
+  members: MemberProps[]
+}
+
 export type LandingPageProps = {
   logo: ImageProps
   header: LandingPageHeaderProps
   sectionHowWorks: SectionHowWorksProps
   sectionAbout: SectionAboutProps
   sectionSponsors: SectionSponsorsProps
+  sectionTeam: SectionTeamProps
 }
