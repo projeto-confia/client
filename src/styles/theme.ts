@@ -20,7 +20,7 @@ const theme = () =>
               margin: 0,
               fontFamily:
                 'Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
-              backgroundImage: 'url(/images/bg-texture.jpg)',
+              backgroundImage: 'url(/images/bg-texture.png)',
             },
           },
         },
