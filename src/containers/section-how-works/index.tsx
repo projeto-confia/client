@@ -9,7 +9,7 @@ const SectionHowWorks = ({ title, processSteps }: SectionHowWorksProps) => {
 
   return (
     <Box component="section" p={4}>
-      <Typography component="h1" variant="h1">
+      <Typography component="h2" variant="h2">
         {title}
       </Typography>
       <Box

@@ -21,10 +21,10 @@ const SectionAbout = ({
       p={4}
     >
       <Box maxWidth="600px" alignSelf="flex-start">
-        <Typography component="h1" variant="h1">
+        <Typography component="h2" variant="h2">
           {title}
         </Typography>
-        <Typography component="h2" variant="h2" gutterBottom>
+        <Typography component="h3" variant="h3" gutterBottom>
           {subtitle}
         </Typography>
         <div dangerouslySetInnerHTML={{ __html: description }} />

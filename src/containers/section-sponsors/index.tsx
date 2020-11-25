@@ -34,7 +34,6 @@ export const Sponsor = ({
 
 const SectionSponsors = ({ title, sponsors }: SectionSponsorsProps) => {
   const theme = useTheme()
-  const isUpToSm = useMediaQuery(theme.breakpoints.up('sm'))
   const isUpToMd = useMediaQuery(theme.breakpoints.up('md'))
   const isUpToLg = useMediaQuery(theme.breakpoints.up('lg'))
 
@@ -47,7 +46,7 @@ const SectionSponsors = ({ title, sponsors }: SectionSponsorsProps) => {
 
   return (
     <Box component="section" p={2}>
-      <Typography component="h1" variant={isUpToSm ? 'h1' : 'h2'}>
+      <Typography component="h2" variant="h2">
         {title}
       </Typography>
       <Box
