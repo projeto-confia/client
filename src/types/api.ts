@@ -56,7 +56,7 @@ export type MemberProps = {
   name: string
   role: string
   photo: ImageProps
-  socialNetworkLink: Nullable<SocialNetworkLinkProps[]>
+  socialNetworkLinks: Nullable<SocialNetworkLinkProps[]>
 }
 
 export type SectionTeamProps = {
