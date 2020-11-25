@@ -18,7 +18,7 @@ const SectionAbout = ({
       alignItems="center"
       justifyContent="space-between"
       component="section"
-      p={4}
+      p={2}
     >
       <Box maxWidth="600px" alignSelf="flex-start">
         <Typography component="h2" variant="h2">

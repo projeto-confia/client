@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: 'center',
       justifyContent: 'space-between',
       margin: '0 auto',
-      padding: `${theme.spacing(4)}px`,
+      padding: `${theme.spacing(2)}px`,
     },
     image: {
       position: 'absolute',

@@ -8,7 +8,7 @@ const SectionHowWorks = ({ title, processSteps }: SectionHowWorksProps) => {
   const theme = useTheme()
 
   return (
-    <Box component="section" p={4}>
+    <Box component="section" p={2}>
       <Typography component="h2" variant="h2">
         {title}
       </Typography>
