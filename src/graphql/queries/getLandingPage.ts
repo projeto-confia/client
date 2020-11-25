@@ -1,67 +1,91 @@
 const GET_LANDING_PAGE = /* GraphQL */ `
-  query GET_LANDING_PAGE {
-    landingPage {
-      logo {
+  fragment logo on LandingPage {
+    logo {
+      url
+      alternativeText
+    }
+  }
+
+  fragment sectionHero on LandingPage {
+    header {
+      title
+      description
+      button {
+        label
+        url
+      }
+      image {
         url
         alternativeText
       }
-      header {
-        title
-        description
-        button {
-          label
+    }
+  }
+
+  fragment sectionHowWorks on LandingPage {
+    sectionHowWorks {
+      title
+      processSteps {
+        label
+        icon {
           url
+          alternativeText
         }
-        image {
+        description
+      }
+    }
+  }
+
+  fragment sectionAbout on LandingPage {
+    sectionAbout {
+      title
+      subtitle
+      description
+      image {
+        url
+        alternativeText
+      }
+    }
+  }
+
+  fragment sectionSponsors on LandingPage {
+    sectionSponsors {
+      title
+      sponsors {
+        name
+        logo {
           url
           alternativeText
         }
       }
-      sectionHowWorks {
-        title
-        processSteps {
-          label
-          icon {
-            url
-            alternativeText
-          }
-          description
-        }
-      }
-      sectionAbout {
-        title
-        subtitle
-        description
-        image {
+    }
+  }
+
+  fragment sectionTeam on LandingPage {
+    sectionTeam {
+      title
+      members {
+        name
+        role
+        photo {
           url
           alternativeText
         }
-      }
-      sectionSponsors {
-        title
-        sponsors {
-          name
-          logo {
-            url
-            alternativeText
-          }
+        socialNetworkLink {
+          socialNetwork
+          url
         }
       }
-      sectionTeam {
-        title
-        members {
-          name
-          role
-          photo {
-            url
-            alternativeText
-          }
-          socialNetworkLink {
-            socialNetwork
-            url
-          }
-        }
-      }
+    }
+  }
+
+  query GET_LANDING_PAGE {
+    landingPage {
+      ...logo
+      ...sectionHero
+      ...sectionHowWorks
+      ...sectionAbout
+      ...sectionSponsors
+      ...sectionTeam
     }
   }
 `
