@@ -12,6 +12,7 @@ import {
 import { LandingPageProps } from '@/types'
 import client from '../graphql/client'
 import GET_LANDING_PAGE from '../graphql/queries/getLandingPage'
+import SectionTeam from 'src/containers/section-team'
 
 const Home = ({
   logo,
@@ -19,6 +20,7 @@ const Home = ({
   sectionHowWorks,
   sectionAbout,
   sectionSponsors,
+  sectionTeam,
 }: LandingPageProps) => (
   <>
     <Head>
@@ -32,6 +34,7 @@ const Home = ({
         <SectionHowWorks {...sectionHowWorks} />
         <SectionAbout {...sectionAbout} />
         <SectionSponsors {...sectionSponsors} />
+        <SectionTeam {...sectionTeam} />
       </Container>
     </main>
   </>
