@@ -13,7 +13,7 @@ const DEFAULT_PROPS: SectionTeamProps = {
         url: '/uploads/logo_gh.svg',
         alternativeText: 'Logo',
       },
-      socialNetworkLink: null,
+      socialNetworkLinks: null,
     },
   ],
 }

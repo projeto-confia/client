@@ -70,7 +70,7 @@ const GET_LANDING_PAGE = /* GraphQL */ `
           url
           alternativeText
         }
-        socialNetworkLink: socialNetworkLinks {
+        socialNetworkLinks: socialNetworkLink {
           socialNetwork
           url
         }
