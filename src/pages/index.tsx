@@ -33,8 +33,8 @@ const Home = ({
         <SectionHero {...header} />
         <SectionHowWorks {...sectionHowWorks} />
         <SectionAbout {...sectionAbout} />
-        <SectionSponsors {...sectionSponsors} />
         <SectionTeam {...sectionTeam} />
+        <SectionSponsors {...sectionSponsors} />
       </Container>
     </main>
   </>
