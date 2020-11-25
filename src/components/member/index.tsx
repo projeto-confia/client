@@ -1,6 +1,8 @@
 import { Box, Paper, Typography } from '@material-ui/core'
 import { Facebook, GitHub, LinkedIn, Group } from '@material-ui/icons'
+
 import { MemberProps, SocialNetworkType } from '@/types'
+import { getImageUrl } from '../../utils/getImageUrl'
 import useStyles from './styles'
 
 const LattesIcon = () => (
@@ -23,7 +25,7 @@ const Member = ({ name, role, photo, socialNetworkLinks }: MemberProps) => {
   return (
     <Paper elevation={1} component="article" className={classes.wrapper}>
       <img
-        src={photo.url}
+        src={getImageUrl(photo.url)}
         alt={photo.alternativeText}
         loading="lazy"
         className={classes.photo}

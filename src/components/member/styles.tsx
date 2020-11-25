@@ -6,14 +6,14 @@ const useStyles = makeStyles((theme: Theme) =>
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      maxWidth: '300px',
-      height: '300px',
+      width: '300px',
+      height: '320px',
       padding: theme.spacing(3),
     },
     photo: {
       width: '150px',
       height: '150px',
-      borderRadius: '50%',
+      borderRadius: 'calc(150px / 2);',
     },
     socialNetworksList: {
       display: 'flex',
