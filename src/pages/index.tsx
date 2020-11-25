@@ -1,6 +1,6 @@
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
-import { Container } from '@material-ui/core'
+import { Box, Container } from '@material-ui/core'
 
 import { Header } from '@/components'
 import {
@@ -29,13 +29,15 @@ const Home = ({
 
     <main>
       <Header image={logo} title="confia" showMenuButton={false} />
-      <Container maxWidth="lg">
-        <SectionHero {...header} />
-        <SectionHowWorks {...sectionHowWorks} />
-        <SectionAbout {...sectionAbout} />
-        <SectionTeam {...sectionTeam} />
-        <SectionSponsors {...sectionSponsors} />
-      </Container>
+      <Box marginTop={10} clone>
+        <Container maxWidth="lg">
+          <SectionHero {...header} />
+          <SectionHowWorks {...sectionHowWorks} />
+          <SectionAbout {...sectionAbout} />
+          <SectionTeam {...sectionTeam} />
+          <SectionSponsors {...sectionSponsors} />
+        </Container>
+      </Box>
     </main>
   </>
 )
