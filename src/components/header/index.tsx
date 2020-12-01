@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import {
   makeStyles,
   createStyles,
@@ -26,9 +27,6 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
-    },
-    logo: {
-      width: '3rem',
     },
     menuButton: {
       marginRight: theme.spacing(2),
@@ -61,11 +59,12 @@ const Header = ({
               <MenuIcon />
             </IconButton>
           )}
-
-          <img
-            className={classes.logo}
+          <Image
             src={getImageUrl(url)}
             alt={alternativeText}
+            width={50}
+            height={50}
+            loading="eager"
           />
           <Typography variant="h4" component="h1" className={classes.title}>
             {title}

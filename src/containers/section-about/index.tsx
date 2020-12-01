@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Box, Typography, useMediaQuery, useTheme } from '@material-ui/core'
 
 import { SectionAboutProps } from '@/types'
@@ -30,7 +31,13 @@ const SectionAbout = ({
         <div dangerouslySetInnerHTML={{ __html: description }} />
       </Box>
       <Box width="100%" minWidth="320px" maxWidth="600px" clone>
-        <img src={getImageUrl(image.url)} alt={image.alternativeText} />
+        <Image
+          src={getImageUrl(image.url)}
+          alt={image.alternativeText}
+          loading="lazy"
+          width={400}
+          height={400}
+        />
       </Box>
     </Box>
   )

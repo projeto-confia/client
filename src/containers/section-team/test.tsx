@@ -10,7 +10,7 @@ const DEFAULT_PROPS: SectionTeamProps = {
       name: 'Fulano da Silva',
       role: 'Desenvolvedor',
       photo: {
-        url: '/uploads/logo_gh.svg',
+        url: 'https://localhost/uploads/logo_gh.svg',
         alternativeText: 'Logo',
       },
       socialNetworkLinks: null,

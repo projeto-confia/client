@@ -13,24 +13,39 @@ import { getImageUrl } from 'src/utils/getImageUrl'
 export const Sponsor = ({
   name,
   logo: { url, alternativeText },
-}: SponsorProps) => (
-  <Box
-    component="li"
-    display="flex"
-    flexDirection="row"
-    alignItems="center"
-    m={2}
-  >
-    <Typography style={{ order: 2, marginLeft: '1rem' }}>{name}</Typography>
-    <Image
-      src={getImageUrl(url)}
-      alt={alternativeText}
-      width={100}
-      height={100}
-      loading="lazy"
-    />
-  </Box>
-)
+}: SponsorProps) => {
+  const theme = useTheme()
+  const isUpToSm = useMediaQuery(theme.breakpoints.up('sm'))
+
+  return (
+    <Box
+      component="li"
+      display="flex"
+      flexDirection={isUpToSm ? 'row' : 'column'}
+      gridGap={theme.spacing(1)}
+      alignItems="center"
+      title={name}
+      m={2}
+    >
+      <Box
+        order={2}
+        maxWidth={300}
+        textAlign={isUpToSm ? 'left' : 'center'}
+        clone
+      >
+        <Typography>{name}</Typography>
+      </Box>
+
+      <Image
+        src={getImageUrl(url)}
+        alt={alternativeText}
+        width={50}
+        height={50}
+        loading="lazy"
+      />
+    </Box>
+  )
+}
 
 const SectionSponsors = ({ title, sponsors }: SectionSponsorsProps) => {
   const theme = useTheme()
@@ -53,6 +68,7 @@ const SectionSponsors = ({ title, sponsors }: SectionSponsorsProps) => {
         display="grid"
         gridTemplateColumns={getGridTemplateColumns()}
         p={3}
+        minWidth={300}
         clone
       >
         <Paper elevation={1} component="ul">

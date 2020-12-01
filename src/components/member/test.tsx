@@ -6,7 +6,7 @@ import Member from '.'
 const DEFAULT_PROPS: MemberProps = {
   name: 'Fulano da Silva',
   photo: {
-    url: '/images/logo_gh.svg',
+    url: 'https://localhost/images/logo_gh.svg',
     alternativeText: 'Logo do confia',
   },
   role: 'Desenvolvedor',

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Box, Paper, Typography } from '@material-ui/core'
 import { Facebook, GitHub, LinkedIn, Group } from '@material-ui/icons'
 
@@ -24,9 +25,11 @@ const Member = ({ name, role, photo, socialNetworkLinks }: MemberProps) => {
   const classes = useStyles()
   return (
     <Paper elevation={1} component="article" className={classes.wrapper}>
-      <img
+      <Image
         src={getImageUrl(photo.url)}
         alt={photo.alternativeText}
+        width={150}
+        height={150}
         loading="lazy"
         className={classes.photo}
       />

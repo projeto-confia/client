@@ -6,13 +6,12 @@ const useStyles = makeStyles((theme: Theme) =>
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
+      gap: `${theme.spacing(1)}px`,
       width: '300px',
-      height: '320px',
-      padding: theme.spacing(3),
+      height: '340px',
+      padding: theme.spacing(2),
     },
     photo: {
-      width: '150px',
-      height: '150px',
       borderRadius: 'calc(150px / 2);',
     },
     socialNetworksList: {
@@ -21,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: 0,
     },
     socialNetwork: {
-      color: theme.palette.grey[800],
+      color: theme.palette.grey[900],
       margin: theme.spacing(1),
     },
   })

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import {
   Box,
   Typography,
@@ -58,10 +59,13 @@ const SectionHero = ({
           {description}
         </Typography>
       </div>
-      <img
+      <Image
         className={isWidthUpToSm ? classes.imageSm : classes.image}
         src={getImageUrl(url)}
         alt={alternativeText}
+        width={400}
+        height={400}
+        loading="eager"
       />
     </Box>
   )
