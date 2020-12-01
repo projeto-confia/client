@@ -8,11 +8,11 @@ import {
   SectionHowWorks,
   SectionAbout,
   SectionSponsors,
+  SectionTeam,
 } from '@/containers'
 import { LandingPageProps } from '@/types'
 import client from '../graphql/client'
 import GET_LANDING_PAGE from '../graphql/queries/getLandingPage'
-import SectionTeam from 'src/containers/section-team'
 
 const Home = ({
   logo,
