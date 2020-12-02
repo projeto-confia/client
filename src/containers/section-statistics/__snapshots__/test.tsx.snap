@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SectionStatistics /> should render all statisticData 1`] = `
+<section
+  class="MuiGrid-root MuiBox-root MuiBox-root-1 MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-center"
+>
+  <div
+    class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-true"
+  >
+    <div
+      class="MuiPaper-root MuiCard-root MuiBox-root MuiBox-root-2 MuiPaper-elevation8 MuiPaper-rounded"
+    >
+      <div
+        class="MuiCardContent-root MuiBox-root MuiBox-root-3"
+      >
+        <h2
+          class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
+        >
+          Notícias revisadas
+        </h2>
+        <p
+          class="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
+        >
+          Total de notícias suspeitas revisadas pelo confia
+        </p>
+        <div
+          class="MuiBox-root MuiBox-root-4"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-h2 MuiTypography-colorPrimary"
+          >
+            57,895
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-true"
+  >
+    <div
+      class="MuiPaper-root MuiCard-root MuiBox-root MuiBox-root-5 MuiPaper-elevation8 MuiPaper-rounded"
+    >
+      <div
+        class="MuiCardContent-root MuiBox-root MuiBox-root-6"
+      >
+        <h2
+          class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
+        >
+          Enviadas para agências de checagem
+        </h2>
+        
+        <div
+          class="MuiBox-root MuiBox-root-7"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-h2 MuiTypography-colorPrimary"
+          >
+            22,300
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-true"
+  >
+    <div
+      class="MuiPaper-root MuiCard-root MuiBox-root MuiBox-root-8 MuiPaper-elevation8 MuiPaper-rounded"
+    >
+      <div
+        class="MuiCardContent-root MuiBox-root MuiBox-root-9"
+      >
+        <h2
+          class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
+        >
+          Fake news encontradas
+        </h2>
+        <p
+          class="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
+        >
+          Total de fake news encontradas e confirmadas pelas agências de checagem
+        </p>
+        <div
+          class="MuiBox-root MuiBox-root-10"
+        >
+          <p
+            class="MuiTypography-root MuiTypography-h2 MuiTypography-colorPrimary"
+          >
+            2,400
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
