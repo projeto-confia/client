@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<StatisticDataCountCard /> should render title 1`] = `
+<div
+  class="MuiPaper-root MuiCard-root MuiBox-root MuiBox-root-1 MuiPaper-elevation8 MuiPaper-rounded"
+>
+  <div
+    class="MuiCardContent-root MuiBox-root MuiBox-root-2"
+  >
+    <h2
+      class="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
+    >
+      Notícias revisadas
+    </h2>
+    <p
+      class="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
+    >
+      Total de notícias suspeitas revisadas pelo confia
+    </p>
+    <div
+      class="MuiBox-root MuiBox-root-3"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-h2 MuiTypography-colorPrimary"
+      >
+        57,895
+      </p>
+    </div>
+  </div>
+</div>
+`;
