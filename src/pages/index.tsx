@@ -9,6 +9,7 @@ import {
   SectionAbout,
   SectionSponsors,
   SectionTeam,
+  SectionStatistics,
 } from '@/containers'
 import { LandingPageProps } from '@/types'
 import client from '../graphql/client'
@@ -21,6 +22,7 @@ const Home = ({
   sectionAbout,
   sectionSponsors,
   sectionTeam,
+  sectionStatistics,
 }: LandingPageProps) => (
   <>
     <Head>
@@ -32,6 +34,7 @@ const Home = ({
       <Box marginTop={10} clone>
         <Container maxWidth="lg">
           <SectionHero {...header} />
+          <SectionStatistics {...sectionStatistics} />
           <SectionHowWorks {...sectionHowWorks} />
           <SectionAbout {...sectionAbout} />
           <SectionTeam {...sectionTeam} />
