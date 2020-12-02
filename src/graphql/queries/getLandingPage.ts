@@ -31,20 +31,6 @@ const GET_LANDING_PAGE = /* GraphQL */ `
     }
   }
 
-  fragment sectionHowWorks on LandingPage {
-    sectionHowWorks {
-      title
-      processSteps {
-        label
-        icon {
-          url
-          alternativeText
-        }
-        description
-      }
-    }
-  }
-
   fragment sectionAbout on LandingPage {
     sectionAbout {
       title
@@ -93,7 +79,6 @@ const GET_LANDING_PAGE = /* GraphQL */ `
       ...logo
       ...sectionStatistics
       ...sectionHero
-      ...sectionHowWorks
       ...sectionAbout
       ...sectionSponsors
       ...sectionTeam

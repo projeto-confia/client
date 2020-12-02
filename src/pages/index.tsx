@@ -5,7 +5,6 @@ import { Box, Container } from '@material-ui/core'
 import { Header } from '@/components'
 import {
   SectionHero,
-  SectionHowWorks,
   SectionAbout,
   SectionSponsors,
   SectionTeam,
@@ -18,7 +17,6 @@ import GET_LANDING_PAGE from '../graphql/queries/getLandingPage'
 const Home = ({
   logo,
   header,
-  sectionHowWorks,
   sectionAbout,
   sectionSponsors,
   sectionTeam,
@@ -35,7 +33,6 @@ const Home = ({
         <Container maxWidth="lg">
           <SectionHero {...header} />
           <SectionStatistics {...sectionStatistics} />
-          <SectionHowWorks {...sectionHowWorks} />
           <SectionAbout {...sectionAbout} />
           <SectionTeam {...sectionTeam} />
           <SectionSponsors {...sectionSponsors} />

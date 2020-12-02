@@ -20,16 +20,10 @@ const useStyles = makeStyles((theme: Theme) =>
       flexFlow: 'row nowrap',
       alignItems: 'center',
       justifyContent: 'space-between',
-      margin: '0 auto',
       padding: `${theme.spacing(2)}px`,
     },
     image: {
-      position: 'absolute',
-      width: '50%',
-      top: -10,
-      right: 0,
-      zIndex: -1,
-      opacity: 0.1,
+      display: 'none',
     },
     imageSm: {
       width: '50%',
