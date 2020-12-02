@@ -67,8 +67,7 @@ const SectionSponsors = ({ title, sponsors }: SectionSponsorsProps) => {
       <Box
         display="grid"
         gridTemplateColumns={getGridTemplateColumns()}
-        p={3}
-        minWidth={300}
+        p={2}
         clone
       >
         <Paper elevation={1} component="ul">

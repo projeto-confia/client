@@ -30,7 +30,7 @@ const SectionAbout = ({
         </Typography>
         <div dangerouslySetInnerHTML={{ __html: description }} />
       </Box>
-      <Box width="100%" minWidth="320px" maxWidth="600px" clone>
+      <Box width="100%" maxWidth="600px" clone>
         <Image
           src={getImageUrl(image.url)}
           alt={image.alternativeText}

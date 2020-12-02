@@ -17,13 +17,13 @@ const useStyles = makeStyles((theme: Theme) =>
     box: {
       position: 'relative',
       display: 'flex',
-      flexFlow: 'row nowrap',
       alignItems: 'center',
       justifyContent: 'space-between',
       padding: `${theme.spacing(2)}px`,
     },
     image: {
-      display: 'none',
+      width: '200px',
+      margin: '-20px auto 0',
     },
     imageSm: {
       width: '50%',
@@ -44,15 +44,19 @@ const SectionHero = ({
   const isWidthUpToSm = useMediaQuery(theme.breakpoints.up('sm'))
 
   return (
-    <Box component="section" className={classes.box}>
-      <div>
+    <Box
+      component="section"
+      className={classes.box}
+      flexDirection={isWidthUpToSm ? 'row' : 'column'}
+    >
+      <Box>
         <Typography component="h1" variant="h1">
           {title}
         </Typography>
         <Typography component="h2" variant="subtitle1">
           {description}
         </Typography>
-      </div>
+      </Box>
       <Image
         className={isWidthUpToSm ? classes.imageSm : classes.image}
         src={getImageUrl(url)}

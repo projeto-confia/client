@@ -10,7 +10,7 @@ const SectionTeam = ({ title, members }: SectionTeamProps) => (
     </Typography>
     <Box
       display="grid"
-      gridTemplateColumns="repeat(auto-fill, minmax(300px, 1fr))"
+      gridTemplateColumns="repeat(auto-fill, minmax(250px, 1fr))"
       justifyItems="center"
       gridGap="10px"
       marginTop={2}
