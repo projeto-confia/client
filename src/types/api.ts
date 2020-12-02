@@ -64,9 +64,20 @@ export type SectionTeamProps = {
   members: MemberProps[]
 }
 
+export type StatisticDataProps = {
+  title: string
+  subtitle: string
+  count: number
+}
+
+export type SectionStatisticsProps = {
+  statisticDatas: StatisticDataProps[]
+}
+
 export type LandingPageProps = {
   logo: ImageProps
   header: LandingPageHeaderProps
+  sectionStatistics: SectionStatisticsProps
   sectionHowWorks: SectionHowWorksProps
   sectionAbout: SectionAboutProps
   sectionSponsors: SectionSponsorsProps

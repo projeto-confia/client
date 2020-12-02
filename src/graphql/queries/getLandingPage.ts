@@ -6,6 +6,16 @@ const GET_LANDING_PAGE = /* GraphQL */ `
     }
   }
 
+  fragment sectionStatistics on LandingPage {
+    sectionStatistics {
+      statisticDatas: statisticData {
+        title
+        subtitle
+        count
+      }
+    }
+  }
+
   fragment sectionHero on LandingPage {
     header {
       title
@@ -81,6 +91,7 @@ const GET_LANDING_PAGE = /* GraphQL */ `
   query GET_LANDING_PAGE {
     landingPage {
       ...logo
+      ...sectionStatistics
       ...sectionHero
       ...sectionHowWorks
       ...sectionAbout
