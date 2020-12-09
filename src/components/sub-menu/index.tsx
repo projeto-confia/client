@@ -10,7 +10,7 @@ import {
   PopperProps,
   ButtonProps,
 } from '@material-ui/core'
-
+import { ArrowDropDown, ArrowDropUp } from '@material-ui/icons'
 import MenuItemLink, { MenuItemLinkProps } from '../menu-item-link'
 
 export type SubMenuProps = {
@@ -62,6 +62,11 @@ const SubMenu = ({ name, menuItemLinks, placement, color }: SubMenuProps) => {
           onClick={handleToggle}
         >
           {name}
+          {open ? (
+            <ArrowDropUp onClick={handleToggle} />
+          ) : (
+            <ArrowDropDown onClick={handleToggle} />
+          )}
         </Button>
         <Popper
           open={open}

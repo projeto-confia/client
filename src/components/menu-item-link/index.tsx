@@ -1,20 +1,22 @@
-import MenuItem from '@material-ui/core/MenuItem'
-import Link, { LinkProps } from '@material-ui/core/Link'
 import NextLink from 'next/link'
+import { Button, ButtonProps } from '@material-ui/core'
 
 export type MenuItemLinkProps = {
-  onClick: () => unknown
+  onClick?: () => unknown
   href: string
   name: string
-} & Pick<LinkProps, 'color'>
+} & Pick<ButtonProps, 'color'>
 
-const MenuItemLink = ({ onClick, href, name, color }: MenuItemLinkProps) => (
+const MenuItemLink = ({
+  onClick = undefined,
+  href,
+  name,
+  color,
+}: MenuItemLinkProps) => (
   <NextLink href={href} passHref>
-    <Link variant="button" color={color}>
-      <MenuItem component="a" onClick={onClick}>
-        {name}
-      </MenuItem>
-    </Link>
+    <Button style={{ display: 'block' }} color={color} onClick={onClick}>
+      {name}
+    </Button>
   </NextLink>
 )
 
