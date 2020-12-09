@@ -28,7 +28,7 @@ const Home = ({
     </Head>
 
     <main>
-      <Header image={logo} title="confia" showMenuButton={false} />
+      <Header image={logo} title="confia" />
       <Box marginTop={10} clone>
         <Container maxWidth="lg">
           <SectionHero {...header} />
