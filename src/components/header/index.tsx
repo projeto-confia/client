@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Image from 'next/image'
 import {
   makeStyles,
@@ -6,10 +7,8 @@ import {
   Container,
   AppBar,
   Toolbar,
-  IconButton,
   Typography,
 } from '@material-ui/core'
-import { Menu as MenuIcon } from '@material-ui/icons'
 
 import { ImageProps } from '../../types/api'
 import { getImageUrl } from '../../utils/getImageUrl'
@@ -17,10 +16,10 @@ import { getImageUrl } from '../../utils/getImageUrl'
 export type Props = {
   title: string
   image: ImageProps
-  showMenuButton?: boolean
   onMenuClick?: (
     event: React.KeyboardEvent | React.MouseEvent
   ) => boolean | void
+  children?: React.ReactNode
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -34,14 +33,22 @@ const useStyles = makeStyles((theme: Theme) =>
     title: {
       marginLeft: '.5rem',
     },
+    content: {
+      marginLeft: 'auto',
+    },
+    logoLink: {
+      display: 'flex',
+      alignItems: 'center',
+      textDecoration: 'none',
+      color: theme.palette.text.primary,
+    },
   })
 )
 
 const Header = ({
   title = 'confia',
   image: { url, alternativeText },
-  onMenuClick,
-  showMenuButton = true,
+  children,
 }: Props) => {
   const classes = useStyles()
 
@@ -49,26 +56,22 @@ const Header = ({
     <AppBar position="fixed" className={classes.root} color="default">
       <Container maxWidth="lg">
         <Toolbar variant="regular">
-          {showMenuButton && (
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              aria-label="menu"
-              onClick={onMenuClick}
-            >
-              <MenuIcon />
-            </IconButton>
-          )}
-          <Image
-            src={getImageUrl(url)}
-            alt={alternativeText}
-            width={50}
-            height={50}
-            loading="eager"
-          />
-          <Typography variant="h4" component="h1" className={classes.title}>
-            {title}
-          </Typography>
+          <Link href="/">
+            <a className={classes.logoLink}>
+              <Image
+                src={getImageUrl(url)}
+                alt={alternativeText}
+                width={50}
+                height={50}
+                loading="eager"
+              />
+
+              <Typography variant="h4" component="h1" className={classes.title}>
+                {title}
+              </Typography>
+            </a>
+          </Link>
+          <div className={classes.content}>{children}</div>
         </Toolbar>
       </Container>
     </AppBar>
