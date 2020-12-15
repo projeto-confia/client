@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import {
   Box,
-  Button,
   Popper,
   Grow,
   Paper,
@@ -9,8 +8,10 @@ import {
   MenuList,
   PopperProps,
   ButtonProps,
+  ListItem,
+  ListItemText,
 } from '@material-ui/core'
-import { ArrowDropDown, ArrowDropUp } from '@material-ui/icons'
+import { ExpandLess, ExpandMore } from '@material-ui/icons'
 import MenuItemLink, { MenuItemLinkProps } from '../menu-item-link'
 
 export type SubMenuProps = {
@@ -54,20 +55,16 @@ const SubMenu = ({ name, menuItemLinks, placement, color }: SubMenuProps) => {
   return (
     <Box>
       <div>
-        <Button
-          ref={anchorRef}
+        <ListItem
+          button
           aria-controls={open ? 'menu-list' : undefined}
           aria-haspopup="true"
           color={color}
           onClick={handleToggle}
         >
-          {name}
-          {open ? (
-            <ArrowDropUp onClick={handleToggle} />
-          ) : (
-            <ArrowDropDown onClick={handleToggle} />
-          )}
-        </Button>
+          <ListItemText ref={anchorRef} primary={name} />
+          {open ? <ExpandLess aria-hidden /> : <ExpandMore aria-hidden />}
+        </ListItem>
         <Popper
           open={open}
           anchorEl={anchorRef.current}
