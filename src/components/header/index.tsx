@@ -8,10 +8,14 @@ import {
   AppBar,
   Toolbar,
   Typography,
+  useMediaQuery,
 } from '@material-ui/core'
 
+import NavigationMenu from '../navigation-menu'
+import DrawerMenu from '../drawer-menu'
 import { ImageProps } from '../../types/api'
 import { getImageUrl } from '../../utils/getImageUrl'
+import navigation from '../../data/navigation'
 
 export type Props = {
   title: string
@@ -19,7 +23,6 @@ export type Props = {
   onMenuClick?: (
     event: React.KeyboardEvent | React.MouseEvent
   ) => boolean | void
-  children?: React.ReactNode
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -48,10 +51,9 @@ const useStyles = makeStyles((theme: Theme) =>
 const Header = ({
   title = 'confia',
   image: { url, alternativeText },
-  children,
 }: Props) => {
   const classes = useStyles()
-
+  const isDesktop = useMediaQuery('(min-width:1120px)')
   return (
     <AppBar position="fixed" className={classes.root} color="default">
       <Container maxWidth="lg">
@@ -71,7 +73,13 @@ const Header = ({
               </Typography>
             </a>
           </Link>
-          <div className={classes.content}>{children}</div>
+          <div className={classes.content}>
+            {isDesktop ? (
+              <NavigationMenu menuItens={navigation} />
+            ) : (
+              <DrawerMenu menuItens={navigation} />
+            )}
+          </div>
         </Toolbar>
       </Container>
     </AppBar>
