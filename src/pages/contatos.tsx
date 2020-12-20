@@ -11,7 +11,7 @@ const Contatos = ({ logo }: LandingPageProps) => {
   return (
     <>
       <Head>
-        <title>Contatos | CONFIA - Compartilhe com segurança</title>
+        <title>Contatos | CONFIA</title>
       </Head>
 
       <LayoutDefault logo={logo}>
