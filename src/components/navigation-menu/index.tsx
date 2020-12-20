@@ -15,9 +15,9 @@ const NavigationMenu = ({ menuItens }: NavigationMenuProps) => {
       <Box display="flex" flexDirection="row">
         {menuItens?.map((item) =>
           item.menuItemLinks?.length ? (
-            <SubMenu key={item.href} {...item} />
+            <SubMenu key={item.name} {...item} />
           ) : (
-            <MenuItemLink key={item.href} {...item} />
+            <MenuItemLink key={item.name} {...item} />
           )
         )}
       </Box>

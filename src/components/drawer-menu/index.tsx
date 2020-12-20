@@ -62,12 +62,12 @@ const DrawerMenu = ({ anchor = 'right', menuItens }: DrawerMenuProps) => {
             {menuItens.map((item) =>
               item.menuItemLinks?.length ? (
                 <SideBarSubMenu
-                  key={item.href}
+                  key={item.name}
                   name={item.name}
                   items={item.menuItemLinks}
                 />
               ) : (
-                <MenuItemLink key={item.href} {...item} />
+                <MenuItemLink key={item.name} {...item} />
               )
             )}
           </List>
