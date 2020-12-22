@@ -13,7 +13,7 @@ import {
 
 import NavigationMenu from '../navigation-menu'
 import DrawerMenu from '../drawer-menu'
-import { ImageProps } from '../../types/api'
+import { ImageProps } from '../../types/image'
 import { getImageUrl } from '../../utils/getImageUrl'
 import navigation from '../../data/navigation'
 
