@@ -1,13 +1,9 @@
+import { ImageProps } from './image'
 import { Nullable } from './nullable'
 
 export type ButtonLinkProps = {
   label: string
   url: string
-}
-
-export type ImageProps = {
-  url: string
-  alternativeText: string
 }
 
 export type LandingPageHeaderProps = {
