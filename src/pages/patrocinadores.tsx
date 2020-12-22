@@ -1,34 +1,43 @@
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
-import { Typography } from '@material-ui/core'
+import { Box, Typography } from '@material-ui/core'
 
 import { LayoutDefault } from '@/components'
-import { LandingPageProps } from '@/types'
+import { SponsorsGrid } from '@/containers'
 import client from '../graphql/client'
-import GET_LANDING_PAGE from '../graphql/queries/getLandingPage'
+import GET_SPONSORS_PAGE from '../graphql/queries/getSponsorPage'
+import { SponsorsPageProps } from 'src/types/sponsorPage'
 
-const Patrocinadores = ({ logo }: LandingPageProps) => {
+const Patrocinadores = ({
+  title,
+  commonPageData: { logo, tabTitle },
+  sponsors,
+}: SponsorsPageProps) => {
+  console.log(sponsors)
+
   return (
     <>
       <Head>
-        <title>Patrocinadores | CONFIA</title>
+        <title>{tabTitle}</title>
       </Head>
 
       <LayoutDefault logo={logo}>
-        <Typography component="h1" variant="h1">
-          Patrocinadores
-        </Typography>
+        <Box component="section" p={2}>
+          <Typography component="h1" variant="h1">
+            {title}
+          </Typography>
+          <SponsorsGrid sponsors={sponsors} />
+        </Box>
       </LayoutDefault>
     </>
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { landingPage } = await client.request(GET_LANDING_PAGE)
-
+  const { sponsorsPage } = await client.request(GET_SPONSORS_PAGE)
   return {
     props: {
-      ...landingPage,
+      ...sponsorsPage,
     },
   }
 }
