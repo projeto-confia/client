@@ -28,14 +28,20 @@ const SponsorsGrid = ({ sponsors }: SponsorsGridProps) => {
       marginTop={2}
     >
       {sponsors.map(({ logo: { alternativeText, url }, name, link }) => (
-        <Box clone key={name} maxWidth={300}>
-          <Card onClick={openAnotherTab(link)} title={link}>
-            <Box clone height="100%">
+        <Box clone key={name} maxWidth={300} padding={1}>
+          <Card component="li" onClick={openAnotherTab(link)} title={link}>
+            <Box
+              clone
+              display="flex"
+              flexDirection="column"
+              justifyContent="flex-start"
+              alignItems="center"
+              height="100%"
+            >
               <CardActionArea>
                 <CardMedia
                   component="img"
                   alt={alternativeText}
-                  height="300"
                   image={getImageUrl(url)}
                 />
                 <CardContent>
