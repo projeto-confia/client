@@ -1,5 +1,6 @@
 import { ImageProps } from './image'
 import { Nullable } from './nullable'
+import { SocialNetworkType } from './socialNetwork'
 
 export type ButtonLinkProps = {
   label: string
@@ -40,8 +41,6 @@ export type SectionSponsorsProps = {
   title: string
   sponsors: SponsorProps[]
 }
-
-export type SocialNetworkType = 'Facebook' | 'LinkedIn' | 'Lattes' | 'GitHub'
 
 export type SocialNetworkLinkProps = {
   socialNetwork: SocialNetworkType
