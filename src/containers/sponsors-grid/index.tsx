@@ -25,6 +25,7 @@ const SponsorsGrid = ({ sponsors }: SponsorsGridProps) => {
       gridTemplateColumns="repeat(auto-fill, minmax(250px, 1fr))"
       justifyItems="center"
       gridGap="10px"
+      padding={0}
       marginTop={2}
     >
       {sponsors.map(({ logo: { alternativeText, url }, name, link }) => (

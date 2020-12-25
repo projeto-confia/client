@@ -12,26 +12,22 @@ const Patrocinadores = ({
   title,
   commonPageData: { logo, tabTitle },
   sponsors,
-}: SponsorsPageProps) => {
-  console.log(sponsors)
+}: SponsorsPageProps) => (
+  <>
+    <Head>
+      <title>{tabTitle}</title>
+    </Head>
 
-  return (
-    <>
-      <Head>
-        <title>{tabTitle}</title>
-      </Head>
-
-      <LayoutDefault logo={logo}>
-        <Box component="section" p={2}>
-          <Typography component="h1" variant="h1">
-            {title}
-          </Typography>
-          <SponsorsGrid sponsors={sponsors} />
-        </Box>
-      </LayoutDefault>
-    </>
-  )
-}
+    <LayoutDefault logo={logo}>
+      <Box component="section" p={2}>
+        <Typography component="h1" variant="h2">
+          {title}
+        </Typography>
+        <SponsorsGrid sponsors={sponsors} />
+      </Box>
+    </LayoutDefault>
+  </>
+)
 
 export const getStaticProps: GetStaticProps = async () => {
   const { sponsorsPage } = await client.request(GET_SPONSORS_PAGE)
