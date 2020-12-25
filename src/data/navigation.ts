@@ -22,6 +22,10 @@ export default [
     ],
   } as NavigationMenuProps,
   {
+    name: 'Colaboradores',
+    href: '/colaboradores',
+  },
+  {
     name: 'Publicações',
     href: '/publicacoes',
   },
