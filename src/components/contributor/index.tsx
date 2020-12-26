@@ -3,9 +3,7 @@ import {
   Card,
   CardMedia,
   CardContent,
-  CardActions,
   Typography,
-  Button,
   useTheme,
 } from '@material-ui/core'
 
@@ -16,6 +14,7 @@ import { getSocialNetworkIcon } from '../../utils/getSocialNetworkIcon'
 const Contributor = ({
   id,
   name,
+  role,
   description,
   photo: { url, alternativeText },
   socialNetworkLinks,
@@ -42,6 +41,9 @@ const Contributor = ({
             <Typography gutterBottom variant="h5" component="h2">
               {name}
             </Typography>
+            <Typography gutterBottom color="primary">
+              {role}
+            </Typography>
             <Box component="ul" p={0}>
               {socialNetworkLinks?.map(({ socialNetwork, url }) => (
                 <Box clone key={url} color={theme.palette.text.primary} mr={1}>
@@ -62,13 +64,6 @@ const Contributor = ({
             </Typography>
           </CardContent>
         </div>
-        <Box flexDirection="row-reverse" clone>
-          <CardActions>
-            <Button size="small" color="primary">
-              Saiba mais
-            </Button>
-          </CardActions>
-        </Box>
       </Card>
     </Box>
   )
