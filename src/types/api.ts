@@ -1,6 +1,5 @@
 import { ImageProps } from './image'
-import { Nullable } from './nullable'
-import { SocialNetworkType } from './socialNetwork'
+import { MemberProps } from './member'
 
 export type ButtonLinkProps = {
   label: string
@@ -40,18 +39,6 @@ export type SponsorProps = {
 export type SectionSponsorsProps = {
   title: string
   sponsors: SponsorProps[]
-}
-
-export type SocialNetworkLinkProps = {
-  socialNetwork: SocialNetworkType
-  url: string
-}
-
-export type MemberProps = {
-  name: string
-  role: string
-  photo: ImageProps
-  socialNetworkLinks: Nullable<SocialNetworkLinkProps[]>
 }
 
 export type SectionTeamProps = {

@@ -14,7 +14,5 @@ const SocialMediaIconMap = new Map<SocialNetworkType, JSX.Element>()
   .set('LinkedIn', <LinkedIn />)
   .set('Lattes', <LattesIcon />)
 
-const getSocialNetworkIcon = (key: SocialNetworkType | string) =>
+export const getSocialNetworkIcon = (key: SocialNetworkType | string) =>
   SocialMediaIconMap.get(key as SocialNetworkType) || <Group />
-
-export default getSocialNetworkIcon
