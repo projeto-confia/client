@@ -2,7 +2,8 @@ import Image from 'next/image'
 import { Box, Paper, Typography } from '@material-ui/core'
 import { Facebook, GitHub, LinkedIn, Group } from '@material-ui/icons'
 
-import { MemberProps, SocialNetworkType } from '@/types'
+import { SocialNetworkType } from '@/types'
+import { MemberProps } from '../../types/member'
 import { getImageUrl } from '../../utils/getImageUrl'
 import useStyles from './styles'
 
