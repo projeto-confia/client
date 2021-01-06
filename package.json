@@ -37,10 +37,10 @@
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/preset-typescript": "^7.12.1",
-    "@storybook/addon-actions": "^6.0.28",
-    "@storybook/addon-essentials": "^6.0.28",
-    "@storybook/addon-links": "^6.0.28",
-    "@storybook/react": "^6.0.28",
+    "@storybook/addon-actions": "^6.1.11",
+    "@storybook/addon-essentials": "^6.1.11",
+    "@storybook/addon-links": "^6.1.11",
+    "@storybook/react": "^6.1.11",
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.1.0",
     "@types/jest": "^26.0.15",
@@ -59,7 +59,7 @@
     "lint-staged": "^10.5.1",
     "prettier": "^2.1.2",
     "react-is": "^17.0.1",
-    "storybook": "^6.0.28",
+    "storybook": "^6.1.11",
     "tsconfig-paths-webpack-plugin": "^3.3.0",
     "typescript": "^4.0.5"
   }
