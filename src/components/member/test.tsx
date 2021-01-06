@@ -1,10 +1,12 @@
 import { render, screen } from '@testing-library/react'
-import { MemberProps } from '../../types/index'
+import { MemberProps } from '../../types/member'
 
 import Member from '.'
 
 const DEFAULT_PROPS: MemberProps = {
+  id: '1',
   name: 'Fulano da Silva',
+  description: 'Some description',
   photo: {
     url: 'https://localhost/images/logo_gh.svg',
     alternativeText: 'Logo do confia',

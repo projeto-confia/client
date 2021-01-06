@@ -1,5 +1,5 @@
-import { MemberProps } from '@/types'
 import { Meta, Story } from '@storybook/react/types-6-0'
+import { MemberProps } from '../../types/member'
 
 import Member from '.'
 
@@ -54,12 +54,13 @@ export const WithoutSocialNetwork: Story = (
 ) => <Member {...(args as MemberProps)} />
 
 WithoutSocialNetwork.args = {
-  name: 'Fulano da Silva',
+  id: '1',
+  description: 'Random description',
+  name: 'Fulanoda Silva',
   photo: {
-    url:
-      'https://icon-library.com/images/woman-profile-icon/woman-profile-icon-23.jpg',
-    alternativeText: 'Logo do confia',
+    alternativeText: 'some altervatives',
+    url: 'test',
   },
-  role: 'Desenvolvedor',
+  role: 'Developer',
   socialNetworkLinks: [],
 } as MemberProps
