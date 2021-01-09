@@ -1,34 +1,42 @@
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
-import { Typography } from '@material-ui/core'
+import { Typography, Box } from '@material-ui/core'
 
 import { LayoutDefault } from '@/components'
-import { LandingPageProps } from '@/types'
+import { PublicationsList } from '@/containers'
+import { PublicationsPageProps } from '@/types'
 import client from '../graphql/client'
-import GET_LANDING_PAGE from '../graphql/queries/getLandingPage'
+import GET_PUBLICATIONS_PAGE from '../graphql/queries/getPublicationsPage'
 
-const Publicacoes = ({ logo }: LandingPageProps) => {
+const Publicacoes = ({
+  commonPageData: { logo, tabTitle },
+  title,
+  publications,
+}: PublicationsPageProps) => {
   return (
     <>
       <Head>
-        <title>Publicações | CONFIA</title>
+        <title>{tabTitle}</title>
       </Head>
 
       <LayoutDefault logo={logo}>
-        <Typography component="h1" variant="h1">
-          Publicações
-        </Typography>
+        <Box component="section" p={2}>
+          <Typography component="h1" variant="h2">
+            {title}
+          </Typography>
+          <PublicationsList publications={publications} />
+        </Box>
       </LayoutDefault>
     </>
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { landingPage } = await client.request(GET_LANDING_PAGE)
+  const { publicationsPage } = await client.request(GET_PUBLICATIONS_PAGE)
 
   return {
     props: {
-      ...landingPage,
+      ...publicationsPage,
     },
   }
 }
