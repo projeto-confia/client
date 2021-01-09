@@ -9,7 +9,7 @@ export default class AppDocument extends Document {
 
   render() {
     return (
-      <Html lang="en">
+      <Html lang="pt-br">
         <Head>
           <meta name="theme-color" content={this.theme.palette.primary.main} />
           <meta name="application-name" content="CONFIA" />
