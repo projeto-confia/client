@@ -1,7 +1,7 @@
 import { CommonPageDataProps } from './commonPageData'
 import { PublicationProps } from './publication'
 
-export type publicationsPageProps = {
+export type PublicationsPageProps = {
   commonPageData: CommonPageDataProps
   title: string
   publications: PublicationProps[]
