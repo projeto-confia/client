@@ -1,11 +1,11 @@
 import { CommonPageDataProps } from './commonPageData'
 import { SectionHeroProps } from './sectionHero'
-import { SectionOverview } from './sectionOverview'
+import { SectionOverviewProps } from './sectionOverview'
 import { SectionStatisticsProps } from './sectionStatistics'
 
 export type HomePageProps = {
   commonPageData: CommonPageDataProps
   sectionHero: SectionHeroProps
   sectionStatistics: SectionStatisticsProps
-  sectionOverview: SectionOverview
+  sectionOverview: SectionOverviewProps
 }

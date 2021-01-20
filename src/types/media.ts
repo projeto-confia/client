@@ -1,4 +1,4 @@
-export type MediaFormat = {
+export type MediaFormatProps = {
   ext: string
   url: string
   hash: string
@@ -10,14 +10,16 @@ export type MediaFormat = {
   height: number
 }
 
+export type MediaFormatsProps = {
+  large: MediaFormatProps
+  small: MediaFormatProps
+  medium: MediaFormatProps
+  thumbnail: MediaFormatProps
+}
+
 export type MediaProps = {
   url: string
   alternativeText?: string
   ext?: string
-  formats?: {
-    large: MediaFormat
-    small: MediaFormat
-    medium: MediaFormat
-    thumbnail: MediaFormat
-  }
+  formats?: MediaFormatsProps
 }

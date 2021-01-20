@@ -1,6 +1,6 @@
 import { MediaProps } from './media'
 
-export type SectionOverview = {
+export type SectionOverviewProps = {
   title: string
   description: string
   media: MediaProps
