@@ -2,25 +2,12 @@ import { GetStaticProps } from 'next'
 import Head from 'next/head'
 
 import { LayoutDefault } from '@/components'
-import {
-  SectionHero,
-  SectionAbout,
-  SectionSponsors,
-  SectionTeam,
-  SectionStatistics,
-} from '@/containers'
+import { SectionHero, SectionStatistics } from '@/containers'
 import { LandingPageProps } from '@/types'
 import client from '../graphql/client'
 import GET_LANDING_PAGE from '../graphql/queries/getLandingPage'
 
-const Home = ({
-  logo,
-  header,
-  sectionAbout,
-  sectionSponsors,
-  sectionTeam,
-  sectionStatistics,
-}: LandingPageProps) => {
+const Home = ({ logo, header, sectionStatistics }: LandingPageProps) => {
   return (
     <>
       <Head>
@@ -30,9 +17,6 @@ const Home = ({
       <LayoutDefault logo={logo}>
         <SectionHero {...header} />
         <SectionStatistics {...sectionStatistics} />
-        <SectionAbout {...sectionAbout} />
-        <SectionTeam {...sectionTeam} />
-        <SectionSponsors {...sectionSponsors} />
       </LayoutDefault>
     </>
   )
