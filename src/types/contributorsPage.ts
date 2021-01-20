@@ -1,8 +1,8 @@
 import { CommonPageDataProps } from './commonPageData'
-import { MemberProps } from './member'
+import { ContributorProps } from './contributor'
 
 export type ContributorsPageProps = {
   commonPageData: CommonPageDataProps
   title: string
-  members: MemberProps[]
+  members: ContributorProps[]
 }

@@ -7,7 +7,7 @@ import {
   useTheme,
 } from '@material-ui/core'
 
-import { MemberProps } from '../../types/member'
+import { ContributorProps } from '../../types/contributor'
 import { getImageUrl } from '../../utils/getImageUrl'
 import { getSocialNetworkIcon } from '../../utils/getSocialNetworkIcon'
 
@@ -18,7 +18,7 @@ const Contributor = ({
   description,
   photo: { url, alternativeText },
   socialNetworkLinks,
-}: MemberProps) => {
+}: ContributorProps) => {
   const theme = useTheme()
   return (
     <Box

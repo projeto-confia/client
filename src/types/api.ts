@@ -1,5 +1,5 @@
 import { ImageProps } from './image'
-import { MemberProps } from './member'
+import { ContributorProps } from './contributor'
 
 export type ButtonLinkProps = {
   label: string
@@ -43,7 +43,7 @@ export type SectionSponsorsProps = {
 
 export type SectionTeamProps = {
   title: string
-  members: MemberProps[]
+  members: ContributorProps[]
 }
 
 export type StatisticDataProps = {

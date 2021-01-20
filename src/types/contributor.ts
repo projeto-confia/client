@@ -2,7 +2,7 @@ import { ImageProps } from './image'
 import { Nullable } from './nullable'
 import { SocialNetworkLinkProps } from './socialNetworkLink'
 
-export type MemberProps = {
+export type ContributorProps = {
   id: string
   name: string
   role: string

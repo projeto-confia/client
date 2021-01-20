@@ -1,10 +1,10 @@
 import { Box } from '@material-ui/core'
 
 import { Contributor } from '@/components'
-import { MemberProps } from '../../types/member'
+import { ContributorProps } from '../../types/contributor'
 
 export type ContributorsGridProps = {
-  contributors: MemberProps[]
+  contributors: ContributorProps[]
 }
 
 const ContributorsGrid = ({ contributors }: ContributorsGridProps) => (
