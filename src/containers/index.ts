@@ -1,7 +1,4 @@
 export { default as SectionHero } from './section-hero'
-export { default as SectionAbout } from './section-about'
-export { default as SectionSponsors } from './section-sponsors'
-export { default as SectionTeam } from './section-team'
 export { default as SectionStatistics } from './section-statistics'
 export { default as SponsorsGrid } from './sponsors-grid'
 export { default as ContributorsGrid } from './contributors-grid'
