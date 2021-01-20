@@ -1,24 +1,7 @@
-import {
-  Box,
-  Typography,
-  makeStyles,
-  Theme,
-  createStyles,
-} from '@material-ui/core'
+import { Box, Typography } from '@material-ui/core'
 
 import { SectionHeroProps } from 'src/types/sectionHero'
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    box: {
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'space-between',
-      padding: `${theme.spacing(2)}px`,
-      maxWidth: `${theme.breakpoints.width('md')}px`,
-    },
-  })
-)
+import useStyles from './styled'
 
 const SectionHero = ({ title, description }: SectionHeroProps) => {
   const classes = useStyles()
