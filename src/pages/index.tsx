@@ -5,7 +5,7 @@ import { LayoutDefault } from '@/components'
 import { SectionHero, SectionStatistics } from '@/containers'
 import { LandingPageProps } from '@/types'
 import client from '../graphql/client'
-import GET_LANDING_PAGE from '../graphql/queries/getLandingPage'
+import GET_LANDING_PAGE from '../graphql/queries/getHomePage'
 
 const Home = ({ logo, header, sectionStatistics }: LandingPageProps) => {
   return (

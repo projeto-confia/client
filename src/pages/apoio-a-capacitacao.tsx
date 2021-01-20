@@ -5,7 +5,7 @@ import { Typography } from '@material-ui/core'
 import { LayoutDefault } from '@/components'
 import { LandingPageProps } from '@/types'
 import client from '../graphql/client'
-import GET_LANDING_PAGE from '../graphql/queries/getLandingPage'
+import GET_LANDING_PAGE from '../graphql/queries/getHomePage'
 
 const ApoioACapacitacao = ({ logo }: LandingPageProps) => {
   return (
