@@ -5,7 +5,7 @@ import { Typography } from '@material-ui/core'
 import { LayoutDefault } from '@/components'
 import { HomePageProps } from '@/types'
 import client from '../graphql/client'
-import GET_LANDING_PAGE from '../graphql/queries/getHomePage'
+import GET_HOME_PAGE from '../graphql/queries/getHomePage'
 
 const MonitoramentoEChecagem = ({
   commonPageData: { logo },
@@ -26,11 +26,11 @@ const MonitoramentoEChecagem = ({
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { landingPage } = await client.request(GET_LANDING_PAGE)
+  const { homePage } = await client.request(GET_HOME_PAGE)
 
   return {
     props: {
-      ...landingPage,
+      ...homePage,
     },
   }
 }
