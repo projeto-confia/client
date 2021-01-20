@@ -9,6 +9,10 @@ export default [
     href: '/',
   },
   {
+    name: 'Projeto',
+    href: '/projeto',
+  },
+  {
     name: 'Serviços',
     menuItemLinks: [
       {
