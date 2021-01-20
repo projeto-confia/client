@@ -1,9 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import {
-  makeStyles,
-  createStyles,
-  Theme,
   Container,
   AppBar,
   Toolbar,
@@ -16,40 +13,18 @@ import DrawerMenu from '../drawer-menu'
 import { ImageProps } from '../../types/image'
 import { getImageUrl } from '../../utils/getImageUrl'
 import navigation from '../../data/navigation'
+import useStyles from './styled'
 
 export type Props = {
-  title: string
+  title?: string
   image: ImageProps
   onMenuClick?: (
     event: React.KeyboardEvent | React.MouseEvent
   ) => boolean | void
 }
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      flexGrow: 1,
-    },
-    menuButton: {
-      marginRight: theme.spacing(2),
-    },
-    title: {
-      marginLeft: '.5rem',
-    },
-    content: {
-      marginLeft: 'auto',
-    },
-    logoLink: {
-      display: 'flex',
-      alignItems: 'center',
-      textDecoration: 'none',
-      color: theme.palette.text.primary,
-    },
-  })
-)
-
 const Header = ({
-  title = 'confia',
+  title = 'CONFIA',
   image: { url, alternativeText },
 }: Props) => {
   const classes = useStyles()
@@ -64,7 +39,7 @@ const Header = ({
                 src={getImageUrl(url)}
                 alt={alternativeText}
                 width={50}
-                height={50}
+                height={62.5}
                 loading="eager"
               />
 
