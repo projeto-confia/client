@@ -4,7 +4,7 @@ import { SectionStatisticsProps } from '../../types/index'
 import SectionStatistics from '.'
 
 const DEFAULT_PROPS: SectionStatisticsProps = {
-  statisticDatas: [
+  statisticData: [
     {
       title: 'Notícias revisadas',
       subtitle: 'Total de notícias suspeitas revisadas pelo confia',
