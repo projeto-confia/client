@@ -10,7 +10,7 @@ export type LayoutDefaultProps = {
 
 const LayoutDefault = ({ children, logo }: LayoutDefaultProps) => (
   <main>
-    <Header image={logo} title="confia" />
+    <Header image={logo} />
 
     <Box marginTop={10} clone>
       <Container maxWidth="lg">{children}</Container>
