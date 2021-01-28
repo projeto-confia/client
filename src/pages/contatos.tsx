@@ -1,34 +1,41 @@
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
-import { Typography } from '@material-ui/core'
+import { Box, Typography } from '@material-ui/core'
 
 import { LayoutDefault } from '@/components'
-import { HomePageProps } from '@/types'
+import { Contacts } from '@/containers'
+import { ContactPageProps } from '@/types'
 import client from '../graphql/client'
-import GET_HOME_PAGE from '../graphql/queries/getHomePage'
+import GET_CONTACT_PAGE from '../graphql/queries/getContactPage'
 
-const Contatos = ({ commonPageData: { logo } }: HomePageProps) => {
-  return (
-    <>
-      <Head>
-        <title>Contatos | CONFIA</title>
-      </Head>
+const Contatos = ({
+  commonPageData: { logo, tabTitle },
+  title,
+  email,
+  socialNetworkLinks,
+}: ContactPageProps) => (
+  <>
+    <Head>
+      <title>{tabTitle}</title>
+    </Head>
 
-      <LayoutDefault logo={logo}>
-        <Typography component="h1" variant="h1">
-          Contatos
+    <LayoutDefault logo={logo}>
+      <Box component="section" p={2}>
+        <Typography component="h1" variant="h2">
+          {title}
         </Typography>
-      </LayoutDefault>
-    </>
-  )
-}
+        <Contacts email={email} socialNetworkLinks={socialNetworkLinks} />
+      </Box>
+    </LayoutDefault>
+  </>
+)
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { homePage } = await client.request(GET_HOME_PAGE)
+  const { contactPage } = await client.request(GET_CONTACT_PAGE)
 
   return {
     props: {
-      ...homePage,
+      ...contactPage,
     },
   }
 }
