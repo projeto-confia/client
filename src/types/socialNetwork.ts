@@ -1,1 +1,7 @@
-export type SocialNetworkType = 'Facebook' | 'LinkedIn' | 'Lattes' | 'GitHub'
+export type SocialNetworkType =
+  | 'Facebook'
+  | 'LinkedIn'
+  | 'Lattes'
+  | 'GitHub'
+  | 'YouTube'
+  | 'Twitter'
