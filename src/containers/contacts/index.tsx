@@ -22,7 +22,12 @@ export const ContactListItem = ({
   const classes = useStyles()
   return (
     <li key={url}>
-      <Link href={url} className={classes.anchor}>
+      <Link
+        href={url}
+        className={classes.anchor}
+        target="_blank"
+        rel="noreferrer"
+      >
         {icon}
         <Typography
           component="p"
