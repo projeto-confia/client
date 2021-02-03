@@ -1,34 +1,42 @@
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
-import { Typography } from '@material-ui/core'
+import { Box, Typography } from '@material-ui/core'
 
 import { LayoutDefault } from '@/components'
-import { HomePageProps } from '@/types'
+import { LinksList } from '@/containers'
+import { LinkPageProps } from '@/types'
 import client from '../graphql/client'
-import GET_HOME_PAGE from '../graphql/queries/getHomePage'
+import GET_LINKS_PAGE from '../graphql/queries/getLinksPage'
 
-const Links = ({ commonPageData: { logo } }: HomePageProps) => {
+const Links = ({
+  commonPageData: { logo, tabTitle },
+  title,
+  relatedLinks,
+}: LinkPageProps) => {
   return (
     <>
       <Head>
-        <title>Links | CONFIA</title>
+        <title>{tabTitle}</title>
       </Head>
 
       <LayoutDefault logo={logo}>
-        <Typography component="h1" variant="h1">
-          Links
-        </Typography>
+        <Box component="section" p={2}>
+          <Typography component="h1" variant="h2">
+            {title}
+          </Typography>
+          <LinksList links={relatedLinks} />
+        </Box>
       </LayoutDefault>
     </>
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { homePage } = await client.request(GET_HOME_PAGE)
+  const { linksPage } = await client.request(GET_LINKS_PAGE)
 
   return {
     props: {
-      ...homePage,
+      ...linksPage,
     },
   }
 }
