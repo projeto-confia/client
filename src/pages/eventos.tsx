@@ -1,34 +1,42 @@
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
-import { Typography } from '@material-ui/core'
+import { Box, Typography } from '@material-ui/core'
 
 import { LayoutDefault } from '@/components'
-import { HomePageProps } from '@/types'
+import { VideoCardsList } from '@/containers'
+import { EventsPageProps } from '@/types'
 import client from '../graphql/client'
-import GET_HOME_PAGE from '../graphql/queries/getHomePage'
+import GET_EVENTS_PAGE from '../graphql/queries/getEventsPage'
 
-const Eventos = ({ commonPageData: { logo } }: HomePageProps) => {
+const Eventos = ({
+  commonPageData: { logo, tabTitle },
+  title,
+  videoCards,
+}: EventsPageProps) => {
   return (
     <>
       <Head>
-        <title>Eventos | CONFIA</title>
+        <title>{tabTitle}</title>
       </Head>
 
       <LayoutDefault logo={logo}>
-        <Typography component="h1" variant="h1">
-          Eventos
-        </Typography>
+        <Box component="section" p={2}>
+          <Typography component="h1" variant="h2">
+            {title}
+          </Typography>
+          <VideoCardsList videoCards={videoCards} />
+        </Box>
       </LayoutDefault>
     </>
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { homePage } = await client.request(GET_HOME_PAGE)
+  const { eventsPage } = await client.request(GET_EVENTS_PAGE)
 
   return {
     props: {
-      ...homePage,
+      ...eventsPage,
     },
   }
 }
