@@ -1,34 +1,42 @@
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
-import { Typography } from '@material-ui/core'
+import { Box, Typography } from '@material-ui/core'
 
 import { LayoutDefault } from '@/components'
-import { HomePageProps } from '@/types'
+import { InstitutionGrid } from '@/containers'
+import { InstitutionsPageProps } from '@/types'
 import client from '../graphql/client'
-import GET_HOME_PAGE from '../graphql/queries/getHomePage'
+import GET_INSTITUTIONS_PAGE from '../graphql/queries/getInstitutionsPage'
 
-const Instituicoes = ({ commonPageData: { logo } }: HomePageProps) => {
+const Instituicoes = ({
+  commonPageData: { logo, tabTitle },
+  title,
+  institutions,
+}: InstitutionsPageProps) => {
   return (
     <>
       <Head>
-        <title>Instituições | CONFIA</title>
+        <title>{tabTitle}</title>
       </Head>
 
       <LayoutDefault logo={logo}>
-        <Typography component="h1" variant="h1">
-          Instituições
-        </Typography>
+        <Box component="section" p={2}>
+          <Typography component="h1" variant="h2">
+            {title}
+          </Typography>
+          <InstitutionGrid institutions={institutions} />
+        </Box>
       </LayoutDefault>
     </>
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { homePage } = await client.request(GET_HOME_PAGE)
+  const { institutionsPage } = await client.request(GET_INSTITUTIONS_PAGE)
 
   return {
     props: {
-      ...homePage,
+      ...institutionsPage,
     },
   }
 }
