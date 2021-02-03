@@ -11,6 +11,7 @@ const GET_EVENTS_PAGE = /* GraphQL */ `
 
   fragment videoCards on EventsPage {
     videoCards {
+      id
       embedCode
       description
     }
