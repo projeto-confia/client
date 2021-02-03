@@ -8,7 +8,7 @@ const SectionHero = ({ title, description }: SectionHeroProps) => {
 
   return (
     <Box component="section" className={classes.box}>
-      <Typography component="h1" variant="h1">
+      <Typography component="h1" variant="h2">
         {title}
       </Typography>
       <Typography component="h2" variant="subtitle1">
