@@ -1,7 +1,4 @@
-import {
-  NavigationMenuItemProps,
-  NavigationMenuProps,
-} from '../components/navigation-menu'
+import { NavigationMenuItemProps } from '../components/navigation-menu'
 
 export default [
   {
@@ -12,19 +9,6 @@ export default [
     name: 'Projeto',
     href: '/projeto',
   },
-  {
-    name: 'Serviços',
-    menuItemLinks: [
-      {
-        name: 'Monitoramento e Checagem',
-        href: '/monitoramento-e-checagem',
-      },
-      {
-        name: 'Apoio à Capacitação',
-        href: '/apoio-a-capacitacao',
-      },
-    ],
-  } as NavigationMenuProps,
   {
     name: 'Colaboradores',
     href: '/colaboradores',
