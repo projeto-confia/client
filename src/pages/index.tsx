@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
+import Box from '@material-ui/core/Box'
 
 import { LayoutDefault } from '@/components'
 import { SectionHero, SectionStatistics, SectionOverview } from '@/containers'
@@ -19,7 +20,9 @@ const Home = ({
     </Head>
 
     <LayoutDefault logo={logo}>
-      <SectionHero {...sectionHero} />
+      <Box paddingY={4}>
+        <SectionHero {...sectionHero} />
+      </Box>
       <SectionStatistics {...sectionStatistics} />
       <SectionOverview {...sectionOverview} />
     </LayoutDefault>
