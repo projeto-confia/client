@@ -14,6 +14,7 @@ export default class AppDocument extends Document {
           <meta name="theme-color" content={this.theme.palette.primary.main} />
           <meta name="application-name" content="CONFIA" />
           <meta name="description" content="Compartilhe com segurança" />
+          <link rel="apple-touch-icon" href="/images/logo192.png"></link>
           <link rel="icon" href="/favicon.ico" />
           <link rel="manifest" href="/manifest.json" />
           <meta
