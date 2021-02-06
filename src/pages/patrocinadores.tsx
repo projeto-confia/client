@@ -10,7 +10,7 @@ import { SponsorsPageProps } from 'src/types/sponsorPage'
 
 const Patrocinadores = ({
   title,
-  commonPageData: { logo, tabTitle },
+  commonPageData: { tabTitle },
   sponsors,
 }: SponsorsPageProps) => (
   <>
@@ -18,7 +18,7 @@ const Patrocinadores = ({
       <title>{tabTitle}</title>
     </Head>
 
-    <LayoutDefault logo={logo}>
+    <LayoutDefault>
       <Box component="section" p={2}>
         <Typography component="h1" variant="h2">
           {title}

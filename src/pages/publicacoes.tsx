@@ -9,7 +9,7 @@ import client from '../graphql/client'
 import GET_PUBLICATIONS_PAGE from '../graphql/queries/getPublicationsPage'
 
 const Publicacoes = ({
-  commonPageData: { logo, tabTitle },
+  commonPageData: { tabTitle },
   title,
   publications,
 }: PublicationsPageProps) => {
@@ -19,7 +19,7 @@ const Publicacoes = ({
         <title>{tabTitle}</title>
       </Head>
 
-      <LayoutDefault logo={logo}>
+      <LayoutDefault>
         <Box component="section" p={2}>
           <Typography component="h1" variant="h2">
             {title}

@@ -1,22 +1,16 @@
-import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import { Box, Paper, Typography } from '@material-ui/core'
 
 import { LayoutDefault } from '@/components'
-import { HomePageProps } from '@/types'
-import client from '../graphql/client'
-import GET_HOME_PAGE from '../graphql/queries/getHomePage'
 
-const MonitoramentoEChecagem = ({
-  commonPageData: { logo },
-}: HomePageProps) => {
+const MonitoramentoEChecagem = () => {
   return (
     <>
       <Head>
         <title>Monitoramento e Checagem | CONFIA</title>
       </Head>
 
-      <LayoutDefault logo={logo}>
+      <LayoutDefault>
         <Box p={2} component="section">
           <Typography component="h1" variant="h2" gutterBottom>
             Monitoramento e Checagem
@@ -35,16 +29,6 @@ const MonitoramentoEChecagem = ({
       </LayoutDefault>
     </>
   )
-}
-
-export const getStaticProps: GetStaticProps = async () => {
-  const { homePage } = await client.request(GET_HOME_PAGE)
-
-  return {
-    props: {
-      ...homePage,
-    },
-  }
 }
 
 export default MonitoramentoEChecagem

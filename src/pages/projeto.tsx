@@ -8,7 +8,7 @@ import client from '../graphql/client'
 import GET_PROJECT_PAGE from '../graphql/queries/getProjectPage'
 
 const Projeto = ({
-  commonPageData: { logo, tabTitle },
+  commonPageData: { tabTitle },
   title,
   content,
 }: ProjectPageProps) => {
@@ -18,7 +18,7 @@ const Projeto = ({
         <title>{tabTitle}</title>
       </Head>
 
-      <LayoutDefault logo={logo}>
+      <LayoutDefault>
         <Box component="section" p={2}>
           <Typography component="h1" variant="h2">
             {title}

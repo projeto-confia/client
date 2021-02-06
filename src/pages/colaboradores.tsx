@@ -10,7 +10,7 @@ import GET_CONTRIBUTORS_PAGE from '../graphql/queries/getContributorsPage'
 import { ContributorsPageProps } from '../types/contributorsPage'
 
 const Colaboradores = ({
-  commonPageData: { logo, tabTitle },
+  commonPageData: { tabTitle },
   title,
   members,
 }: ContributorsPageProps) => (
@@ -19,7 +19,7 @@ const Colaboradores = ({
       <title>{tabTitle}</title>
     </Head>
 
-    <LayoutDefault logo={logo}>
+    <LayoutDefault>
       <Box component="section" p={2}>
         <Typography component="h1" variant="h2">
           {title}

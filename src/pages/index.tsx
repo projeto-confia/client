@@ -9,7 +9,7 @@ import client from '../graphql/client'
 import GET_HOME_PAGE from '../graphql/queries/getHomePage'
 
 const Home = ({
-  commonPageData: { logo, tabTitle },
+  commonPageData: { tabTitle },
   sectionHero,
   sectionStatistics,
   sectionOverview,
@@ -19,7 +19,7 @@ const Home = ({
       <title>{tabTitle}</title>
     </Head>
 
-    <LayoutDefault logo={logo}>
+    <LayoutDefault>
       <Box paddingY={4}>
         <SectionHero {...sectionHero} />
       </Box>

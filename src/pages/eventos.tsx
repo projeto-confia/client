@@ -9,7 +9,7 @@ import client from '../graphql/client'
 import GET_EVENTS_PAGE from '../graphql/queries/getEventsPage'
 
 const Eventos = ({
-  commonPageData: { logo, tabTitle },
+  commonPageData: { tabTitle },
   title,
   videoCards,
 }: EventsPageProps) => {
@@ -19,7 +19,7 @@ const Eventos = ({
         <title>{tabTitle}</title>
       </Head>
 
-      <LayoutDefault logo={logo}>
+      <LayoutDefault>
         <Box component="section" p={2}>
           <Typography component="h1" variant="h2">
             {title}

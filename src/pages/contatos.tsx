@@ -9,7 +9,7 @@ import client from '../graphql/client'
 import GET_CONTACT_PAGE from '../graphql/queries/getContactPage'
 
 const Contatos = ({
-  commonPageData: { logo, tabTitle },
+  commonPageData: { tabTitle },
   title,
   email,
   socialNetworkLinks,
@@ -19,7 +19,7 @@ const Contatos = ({
       <title>{tabTitle}</title>
     </Head>
 
-    <LayoutDefault logo={logo}>
+    <LayoutDefault>
       <Box component="section" p={2}>
         <Typography component="h1" variant="h2">
           {title}

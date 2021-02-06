@@ -9,7 +9,7 @@ import client from '../graphql/client'
 import GET_INSTITUTIONS_PAGE from '../graphql/queries/getInstitutionsPage'
 
 const Instituicoes = ({
-  commonPageData: { logo, tabTitle },
+  commonPageData: { tabTitle },
   title,
   institutions,
 }: InstitutionsPageProps) => {
@@ -19,7 +19,7 @@ const Instituicoes = ({
         <title>{tabTitle}</title>
       </Head>
 
-      <LayoutDefault logo={logo}>
+      <LayoutDefault>
         <Box component="section" p={2}>
           <Typography component="h1" variant="h2">
             {title}

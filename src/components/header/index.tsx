@@ -10,23 +10,17 @@ import {
 
 import NavigationMenu from '../navigation-menu'
 import DrawerMenu from '../drawer-menu'
-import { ImageProps } from '../../types/image'
-import { getImageUrl } from '../../utils/getImageUrl'
 import navigation from '../../data/navigation'
 import useStyles from './styled'
 
 export type Props = {
   title?: string
-  image: ImageProps
   onMenuClick?: (
     event: React.KeyboardEvent | React.MouseEvent
   ) => boolean | void
 }
 
-const Header = ({
-  title = 'CONFIA',
-  image: { url, alternativeText },
-}: Props) => {
+const Header = ({ title = 'CONFIA' }: Props) => {
   const classes = useStyles()
   const isDesktop = useMediaQuery('(min-width:1120px)')
   return (
@@ -36,10 +30,10 @@ const Header = ({
           <Link href="/">
             <a className={classes.logoLink}>
               <Image
-                src={getImageUrl(url)}
-                alt={alternativeText}
+                src="/images/logo.png"
+                alt="Logo do projeto CONFIA"
                 width={50}
-                height={62.5}
+                height={50}
                 loading="eager"
               />
 
