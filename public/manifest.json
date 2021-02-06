@@ -1,21 +1,21 @@
 {
-    "name": "CONFIA - Compartilhando com segurança",
+    "name": "CONFIA - Combate a Notícias Falsas empregando Inteligência Artificial",
     "short_name": "CONFIA",
     "icons": [
       {
-        "src": "/img/icon-192.png",
+        "src": "/images/logo192.png",
         "type": "image/png",
         "sizes": "192x192"
       },
       {
-        "src": "/img/icon-512.png",
+        "src": "/images/logo512.png",
         "type": "image/png",
         "sizes": "512x512"
       }
     ],
-    "background_color": "#06092B",
+    "background_color": "#f0f0f0",
     "description": "Compartilhe informações com segurança de que são verdadeiras.",
     "display": "fullscreen",
     "start_url": "/",
-    "theme_color": "#33b5cc"
+    "theme_color": "#61c78c"
   }
