@@ -3,6 +3,7 @@ import {
   List,
   ListItem,
   ListItemText,
+  Paper,
   Typography,
 } from '@material-ui/core'
 
@@ -28,14 +29,16 @@ const SectionSubProjects = ({
       <List>
         {subProjects?.map(({ title, description }) => (
           <ListItem key={title}>
-            <ListItemText
-              primary={
-                <Typography component="h3" variant="subtitle1" gutterBottom>
-                  {title}
-                </Typography>
-              }
-              secondary={description}
-            />
+            <Box p={2} component={Paper}>
+              <ListItemText
+                primary={
+                  <Typography component="h3" variant="subtitle1" gutterBottom>
+                    {title}
+                  </Typography>
+                }
+                secondary={description}
+              />
+            </Box>
           </ListItem>
         ))}
       </List>
