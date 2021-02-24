@@ -3,12 +3,7 @@ import Head from 'next/head'
 import Box from '@material-ui/core/Box'
 
 import { LayoutDefault } from '@/components'
-import {
-  SectionHero,
-  SectionStatistics,
-  SectionOverview,
-  SectionSubProjects,
-} from '@/containers'
+import { SectionHero, SectionOverview, SectionSubProjects } from '@/containers'
 import { HomePageProps } from '@/types'
 import client from '../graphql/client'
 import GET_HOME_PAGE from '../graphql/queries/getHomePage'
@@ -16,7 +11,6 @@ import GET_HOME_PAGE from '../graphql/queries/getHomePage'
 const Home = ({
   commonPageData: { tabTitle },
   sectionHero,
-  sectionStatistics,
   sectionOverview,
   sectionSubProjects,
 }: HomePageProps) => (
@@ -26,10 +20,9 @@ const Home = ({
     </Head>
 
     <LayoutDefault>
-      <Box paddingY={4}>
+      <Box paddingTop={4}>
         <SectionHero {...sectionHero} />
       </Box>
-      <SectionStatistics {...sectionStatistics} />
       <SectionOverview {...sectionOverview} />
       <SectionSubProjects {...sectionSubProjects} />
     </LayoutDefault>
