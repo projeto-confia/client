@@ -30,11 +30,16 @@ const GET_HOME_PAGE = /* GraphQL */ `
     sectionOverview {
       title
       description
-      media {
-        url
-        alternativeText
-        ext
-        formats
+    }
+  }
+
+  fragment sectionSubProjects on HomePage {
+    sectionSubProjects {
+      title
+      message
+      subProjects: subProject {
+        title
+        description
       }
     }
   }
@@ -45,6 +50,7 @@ const GET_HOME_PAGE = /* GraphQL */ `
       ...sectionHero
       ...sectionStatistics
       ...sectionOverview
+      ...sectionSubProjects
     }
   }
 `
