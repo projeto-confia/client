@@ -16,16 +16,6 @@ const GET_HOME_PAGE = /* GraphQL */ `
     }
   }
 
-  fragment sectionStatistics on HomePage {
-    sectionStatistics {
-      statisticData {
-        title
-        subtitle
-        count
-      }
-    }
-  }
-
   fragment sectionOverview on HomePage {
     sectionOverview {
       title
@@ -48,7 +38,6 @@ const GET_HOME_PAGE = /* GraphQL */ `
     homePage {
       ...commonPageData
       ...sectionHero
-      ...sectionStatistics
       ...sectionOverview
       ...sectionSubProjects
     }
