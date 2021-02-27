@@ -1,3 +1,4 @@
+import { SubMenuProps } from 'src/components/sub-menu'
 import { NavigationMenuItemProps } from '../components/navigation-menu'
 
 export default [
@@ -6,9 +7,19 @@ export default [
     href: '/',
   },
   {
-    name: 'Projeto',
-    href: '/projeto',
-  },
+    name: 'Subprojetos',
+    menuItemLinks: [
+      {
+        name: 'AUTOMATA',
+        href: '/subprojetos/automata',
+      },
+      {
+        name: 'JED',
+        href: '/subprojetos/jed',
+      },
+    ],
+    placement: 'bottom',
+  } as SubMenuProps,
   {
     name: 'Colaboradores',
     href: '/colaboradores',
