@@ -2,10 +2,6 @@ const GET_CONTRIBUTORS_PAGE = /* GraphQL */ `
   fragment commonPagedata on ContributorsPage {
     commonPageData {
       tabTitle
-      logo {
-        url
-        alternativeText
-      }
     }
   }
 

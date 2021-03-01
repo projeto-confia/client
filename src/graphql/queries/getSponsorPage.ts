@@ -2,10 +2,6 @@ const GET_SPONSORS_PAGE = /* GraphQL */ `
   fragment commonPagedata on SponsorsPage {
     commonPageData {
       tabTitle
-      logo {
-        url
-        alternativeText
-      }
     }
   }
 

@@ -2,10 +2,6 @@ const GET_PUBLICATIONS_PAGE = /* GraphQL */ `
   fragment commonPagedata on PublicationsPage {
     commonPageData {
       tabTitle
-      logo {
-        url
-        alternativeText
-      }
     }
   }
 

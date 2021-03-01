@@ -3,10 +3,6 @@ const GET_PROJECT_PAGE = /* GraphQL */ `
     projectPage {
       commonPageData {
         tabTitle
-        logo {
-          url
-          alternativeText
-        }
       }
       title
       content

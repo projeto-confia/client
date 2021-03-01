@@ -2,10 +2,6 @@ const GET_LINKS_PAGE = /* GraphQL */ `
   fragment commomPageData on LinksPage {
     commonPageData {
       tabTitle
-      logo {
-        url
-        alternativeText
-      }
     }
   }
 
