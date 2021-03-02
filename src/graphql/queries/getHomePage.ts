@@ -30,7 +30,7 @@ const GET_HOME_PAGE = /* GraphQL */ `
     }
   }
 
-  query GET_HOME_QUERY {
+  query GET_HOME_PAGE {
     homePage {
       ...commonPageData
       ...sectionHero
