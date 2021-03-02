@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core'
 
 import { SponsorProps } from '../../types/sponsorPage'
-import { getImageUrl } from 'src/utils/getImageUrl'
+import { resolveUrl } from 'src/utils/getImageUrl'
 
 export type SponsorsGridProps = {
   sponsors: SponsorProps[]
@@ -50,7 +50,7 @@ const SponsorsGrid = ({ sponsors }: SponsorsGridProps) => {
                 <Box margin="0 auto" width={imageSize}>
                   <Image
                     alt={alternativeText}
-                    src={getImageUrl(url)}
+                    src={resolveUrl(url)}
                     width={imageSize}
                     height={imageSize}
                     loading="eager"
