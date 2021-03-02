@@ -58,7 +58,7 @@ const SubMenu = ({ name, menuItemLinks, placement }: SubMenuProps) => {
         ref={anchorRef}
         aria-controls={open ? 'menu-list' : undefined}
         aria-haspopup="true"
-        style={{ textTransform: 'none', fontSize: '1rem', fontWeight: 400 }}
+        style={{ textTransform: 'none', fontSize: '1.23rem', fontWeight: 400 }}
         onClick={handleToggle}
         endIcon={
           open ? (
