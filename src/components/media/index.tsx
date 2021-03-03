@@ -13,10 +13,14 @@ const getImageFormat = (isUpToMd: boolean, media: MediaProps) => {
 }
 
 const Media = (media: MediaProps) => {
-  const isImage = media.ext && IMG_EXTS.includes(media.ext)
   const theme = useTheme()
   const isUpToMd = useMediaQuery(theme.breakpoints.up('md'))
   const imageFormat = getImageFormat(isUpToMd, media)
+  const isImage = media.ext && IMG_EXTS.includes(media.ext)
+
+  if (!media.url) {
+    return null
+  }
 
   return isImage ? (
     <Image
