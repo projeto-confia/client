@@ -2,10 +2,6 @@ const GET_EVENTS_PAGE = /* GraphQL */ `
   fragment commomPageData on EventsPage {
     commonPageData {
       tabTitle
-      logo {
-        url
-        alternativeText
-      }
     }
   }
 

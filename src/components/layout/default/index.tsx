@@ -7,13 +7,15 @@ export type LayoutDefaultProps = {
 }
 
 const LayoutDefault = ({ children }: LayoutDefaultProps) => (
-  <main>
+  <>
     <Header />
 
     <Box marginTop={10} clone>
-      <Container maxWidth="lg">{children}</Container>
+      <Container maxWidth="lg" component="main">
+        {children}
+      </Container>
     </Box>
-  </main>
+  </>
 )
 
 export default LayoutDefault

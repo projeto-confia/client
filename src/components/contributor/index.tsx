@@ -8,7 +8,7 @@ import {
 } from '@material-ui/core'
 
 import { ContributorProps } from '../../types/contributor'
-import { getImageUrl } from '../../utils/getImageUrl'
+import { resolveUrl } from '../../utils/getImageUrl'
 import { getSocialNetworkIcon } from '../../utils/getSocialNetworkIcon'
 
 const Contributor = ({
@@ -34,7 +34,7 @@ const Contributor = ({
             component="img"
             alt={alternativeText}
             title={name}
-            image={getImageUrl(url)}
+            image={resolveUrl(url)}
             height={200}
           />
           <CardContent>

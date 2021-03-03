@@ -2,10 +2,6 @@ const GET_INSTITUTIONS_PAGE = /* GraphQL */ `
   fragment commomPageData on InstitutionsPage {
     commonPageData {
       tabTitle
-      logo {
-        url
-        alternativeText
-      }
     }
   }
 

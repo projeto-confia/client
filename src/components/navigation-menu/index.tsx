@@ -1,4 +1,4 @@
-import { Box } from '@material-ui/core'
+import { Box, ListItem } from '@material-ui/core'
 
 import { MenuItemLink, SubMenu } from '@/components'
 import { MenuItemLinkProps } from '../menu-item-link'
@@ -11,17 +11,17 @@ export type NavigationMenuProps = {
 
 const NavigationMenu = ({ menuItens }: NavigationMenuProps) => {
   return (
-    <nav>
-      <Box display="flex" flexDirection="row">
-        {menuItens?.map((item) =>
-          item.menuItemLinks?.length ? (
-            <SubMenu key={item.name} {...item} />
+    <Box display="flex" flexDirection="row" component="ul" m={0} p={0}>
+      {menuItens?.map((item) => (
+        <ListItem disableGutters key={item.name}>
+          {item.menuItemLinks?.length ? (
+            <SubMenu {...item} />
           ) : (
-            <MenuItemLink key={item.name} {...item} />
-          )
-        )}
-      </Box>
-    </nav>
+            <MenuItemLink {...item} />
+          )}
+        </ListItem>
+      ))}
+    </Box>
   )
 }
 

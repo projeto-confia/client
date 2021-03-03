@@ -8,7 +8,7 @@ import {
   useTheme,
 } from '@material-ui/core'
 
-import { getImageUrl } from 'src/utils/getImageUrl'
+import { resolveUrl } from 'src/utils/getImageUrl'
 import { InstitutionProps } from '@/types'
 
 export type InstitutionsGridProps = {
@@ -50,7 +50,7 @@ const InstitutionsGrid = ({ institutions }: InstitutionsGridProps) => {
                 <Box margin="0 auto" width={imageSize}>
                   <Image
                     alt={alternativeText}
-                    src={getImageUrl(url)}
+                    src={resolveUrl(url)}
                     width={imageSize}
                     height={imageSize}
                     loading="eager"

@@ -3,10 +3,6 @@ const GET_CONTACT_PAGE = /* GraphQL */ `
     contactPage {
       commonPageData {
         tabTitle
-        logo {
-          url
-          alternativeText
-        }
       }
       title
       email

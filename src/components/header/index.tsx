@@ -22,11 +22,11 @@ export type Props = {
 
 const Header = ({ title = 'CONFIA' }: Props) => {
   const classes = useStyles()
-  const isDesktop = useMediaQuery('(min-width:1120px)')
+  const isDesktop = useMediaQuery('(min-width:1440px)')
   return (
     <AppBar position="fixed" className={classes.root} color="default">
       <Container maxWidth="lg">
-        <Toolbar variant="regular">
+        <Toolbar variant="regular" component="nav">
           <Link href="/">
             <a className={classes.logoLink}>
               <Image

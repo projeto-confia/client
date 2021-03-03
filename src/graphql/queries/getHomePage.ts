@@ -2,10 +2,6 @@ const GET_HOME_PAGE = /* GraphQL */ `
   fragment commonPageData on HomePage {
     commonPageData {
       tabTitle
-      logo {
-        url
-        alternativeText
-      }
     }
   }
 
@@ -34,7 +30,7 @@ const GET_HOME_PAGE = /* GraphQL */ `
     }
   }
 
-  query GET_HOME_HAME {
+  query GET_HOME_PAGE {
     homePage {
       ...commonPageData
       ...sectionHero
