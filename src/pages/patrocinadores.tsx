@@ -6,7 +6,7 @@ import { LayoutDefault } from '@/components'
 import { SponsorsGrid } from '@/containers'
 import client from '../graphql/client'
 import GET_SPONSORS_PAGE from '../graphql/queries/getSponsorPage'
-import { SponsorsPageProps } from 'src/types/sponsorPage'
+import { SponsorsPageProps } from '../types'
 
 const Patrocinadores = ({
   title,

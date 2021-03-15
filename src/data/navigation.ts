@@ -1,4 +1,4 @@
-import { SubMenuProps } from 'src/components/sub-menu'
+import { SubMenuProps } from '../components/sub-menu'
 import { NavigationMenuItemProps } from '../components/navigation-menu'
 
 export default [
