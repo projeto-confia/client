@@ -21,6 +21,26 @@ export default [
     placement: 'bottom',
   } as SubMenuProps,
   {
+    name: 'Prod. e Serviços',
+    menuItemLinks: [
+      {
+        name: 'Painel privado',
+        href: 'http://admin.projetoconfia.info/',
+        target: '_blank',
+      },
+      {
+        name: 'Monitoramento de notícias',
+        href: '/produtos-e-servicos/monitoramento-de-noticias',
+      },
+      {
+        name: 'Apoia a capacitação',
+        href:
+          '/produtos-e-servicos/apoio-a-capacitacao-na-identificacao-de-fake-news',
+      },
+    ],
+    placement: 'bottom',
+  } as SubMenuProps,
+  {
     name: 'Colaboradores',
     href: '/colaboradores',
   },

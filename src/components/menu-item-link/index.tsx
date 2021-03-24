@@ -12,6 +12,7 @@ export type MenuItemLinkProps = {
   onClick?: () => unknown
   href: string
   name: string
+  target?: string
 } & Pick<ListItemProps, 'color'>
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -28,12 +29,13 @@ const MenuItemLink = ({
   href,
   name,
   color,
+  target = '_self',
 }: MenuItemLinkProps) => {
   const classes = useStyles()
 
   return (
     <NextLink href={href} passHref>
-      <a className={classes.link}>
+      <a className={classes.link} target={target}>
         <ListItem button color={color} onClick={onClick}>
           <ListItemText primary={name} />
         </ListItem>
