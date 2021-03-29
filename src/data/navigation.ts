@@ -37,6 +37,11 @@ export default [
         href:
           '/produtos-e-servicos/apoio-a-capacitacao-na-identificacao-de-fake-news',
       },
+      {
+        name: 'Jogo da trilha',
+        href: 'http://memore-net.com/jogos/trilha/',
+        target: '_blank',
+      },
     ],
     placement: 'bottom',
   } as SubMenuProps,
