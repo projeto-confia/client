@@ -33,7 +33,7 @@ export default [
         href: '/produtos-e-servicos/monitoramento-de-noticias',
       },
       {
-        name: 'Apoia a capacitação',
+        name: 'Apoia à capacitação',
         href:
           '/produtos-e-servicos/apoio-a-capacitacao-na-identificacao-de-fake-news',
       },
