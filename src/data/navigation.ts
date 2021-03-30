@@ -21,7 +21,7 @@ export default [
     placement: 'bottom',
   } as SubMenuProps,
   {
-    name: 'Prod. e Serviços',
+    name: 'Produtos e Serviços',
     menuItemLinks: [
       {
         name: 'Painel privado',

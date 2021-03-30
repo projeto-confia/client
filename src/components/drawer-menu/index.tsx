@@ -1,79 +1,70 @@
-import React, { useState } from 'react'
 import {
-  IconButton,
-  SwipeableDrawer,
+  Divider,
+  Drawer,
   List,
   ListItem,
   ListItemIcon,
   ListItemText,
-  Divider,
-  createStyles,
-  makeStyles,
+  useMediaQuery,
+  useTheme,
 } from '@material-ui/core'
-import { Menu as MenuIcon, Close as CloseIcon } from '@material-ui/icons'
+import { Close as CloseIcon } from '@material-ui/icons'
 
-import MenuItemLink from '../menu-item-link'
-import { NavigationMenuItemProps } from '../navigation-menu'
 import SideBarSubMenu from '../sidebar-submenu'
+import MenuItemLink from '../menu-item-link'
+import navigation from '../../data/navigation'
+import useStyles from './styled'
 
-export type DrawerMenuProps = {
-  anchor?: 'bottom' | 'right'
-  menuItens: NavigationMenuItemProps[]
+export type Props = {
+  isOpen: boolean
+  onClickClose: () => void
+  onClose: () => void
 }
 
-const useStyles = makeStyles(() =>
-  createStyles({
-    list: {
-      minWidth: 250,
-    },
-  })
-)
-
-const DrawerMenu = ({ anchor = 'right', menuItens }: DrawerMenuProps) => {
-  const [isOpen, setIsOpen] = useState(false)
+const DrawerMenu = ({ isOpen, onClose, onClickClose }: Props) => {
+  const theme = useTheme()
+  const isDesktop = useMediaQuery(theme.breakpoints.up('sm'))
   const classes = useStyles()
 
   return (
-    <>
-      <IconButton
-        edge="start"
-        aria-label="menu"
-        onClick={() => setIsOpen(true)}
-      >
-        <MenuIcon />
-      </IconButton>
+    <Drawer
+      anchor={isDesktop ? 'left' : 'right'}
+      variant={isDesktop ? 'permanent' : undefined}
+      open={isOpen}
+      onClose={onClose}
+      className={classes.drawer}
+      classes={{
+        paper: classes.drawerPaper,
+      }}
+    >
+      <div className={classes.drawerContainer}>
+        <List>
+          {!isDesktop && (
+            <>
+              <ListItem button onClick={onClickClose}>
+                <ListItemIcon>
+                  <CloseIcon />
+                </ListItemIcon>
+                <ListItemText primary="Fechar" />
+              </ListItem>
+              <Divider />
+            </>
+          )}
 
-      <SwipeableDrawer
-        anchor={anchor}
-        open={isOpen}
-        onClose={() => setIsOpen(false)}
-        onOpen={() => setIsOpen(true)}
-      >
-        <div className={classes.list} role="presentation">
-          <List>
-            <ListItem button onClick={() => setIsOpen(false)}>
-              <ListItemIcon>
-                <CloseIcon />
-              </ListItemIcon>
-              <ListItemText primary="Fechar" />
-            </ListItem>
-            <Divider />
-
-            {menuItens.map((item) =>
-              item.menuItemLinks?.length ? (
-                <SideBarSubMenu
-                  key={item.name}
-                  name={item.name}
-                  items={item.menuItemLinks}
-                />
-              ) : (
-                <MenuItemLink key={item.name} {...item} />
-              )
-            )}
-          </List>
-        </div>
-      </SwipeableDrawer>
-    </>
+          {navigation.map((item) =>
+            item.menuItemLinks?.length ? (
+              <SideBarSubMenu
+                key={item.name}
+                name={item.name}
+                items={item.menuItemLinks}
+              />
+            ) : (
+              <MenuItemLink key={item.name} {...item} />
+            )
+          )}
+        </List>
+      </div>
+    </Drawer>
   )
 }
 
