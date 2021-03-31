@@ -7,7 +7,7 @@ import {
   YouTube,
   Twitter,
 } from '@material-ui/icons'
-import { SocialNetworkType } from 'src/types/socialNetwork'
+import { SocialNetworkType } from '../types'
 
 const LattesIcon = () => (
   <Box width="1.2rem" clone>
