@@ -28,11 +28,12 @@ const SideBarSubMenu = ({ name, items }: SideBarSubMenuProps) => {
 
       <Collapse in={isOpen} timeout="auto" unmountOnExit>
         <Divider />
-        <List component="div" disablePadding>
+        <List component="ul" disablePadding>
           {items.map((item) => (
             <MenuItemLink {...item} key={item.href} />
           ))}
         </List>
+        <Divider />
       </Collapse>
     </>
   )

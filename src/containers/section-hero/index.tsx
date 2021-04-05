@@ -1,6 +1,6 @@
 import { Box, Typography } from '@material-ui/core'
 
-import { SectionHeroProps } from 'src/types/sectionHero'
+import { SectionHeroProps } from '../../types'
 import useStyles from './styled'
 
 const SectionHero = ({ title, description }: SectionHeroProps) => {

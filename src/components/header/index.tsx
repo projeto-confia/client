@@ -1,28 +1,20 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import {
-  Container,
-  AppBar,
-  Toolbar,
-  Typography,
-  useMediaQuery,
-} from '@material-ui/core'
+import { Container, AppBar, Toolbar, Typography } from '@material-ui/core'
 
-import NavigationMenu from '../navigation-menu'
-import DrawerMenu from '../drawer-menu'
-import navigation from '../../data/navigation'
 import useStyles from './styled'
 
 export type Props = {
   title?: string
+  children: React.ReactNode
   onMenuClick?: (
     event: React.KeyboardEvent | React.MouseEvent
   ) => boolean | void
 }
 
-const Header = ({ title = 'CONFIA' }: Props) => {
+const Header = ({ title = 'CONFIA', children }: Props) => {
   const classes = useStyles()
-  const isDesktop = useMediaQuery('(min-width:1440px)')
+
   return (
     <AppBar position="fixed" className={classes.root} color="default">
       <Container maxWidth="lg">
@@ -42,13 +34,7 @@ const Header = ({ title = 'CONFIA' }: Props) => {
               </Typography>
             </a>
           </Link>
-          <div className={classes.content}>
-            {isDesktop ? (
-              <NavigationMenu menuItens={navigation} />
-            ) : (
-              <DrawerMenu menuItens={navigation} />
-            )}
-          </div>
+          <div className={classes.content}>{children}</div>
         </Toolbar>
       </Container>
     </AppBar>

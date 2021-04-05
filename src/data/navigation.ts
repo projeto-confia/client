@@ -1,4 +1,4 @@
-import { SubMenuProps } from 'src/components/sub-menu'
+import { SubMenuProps } from '../components/sub-menu'
 import { NavigationMenuItemProps } from '../components/navigation-menu'
 
 export default [
@@ -16,6 +16,31 @@ export default [
       {
         name: 'JED',
         href: '/subprojetos/jed',
+      },
+    ],
+    placement: 'bottom',
+  } as SubMenuProps,
+  {
+    name: 'Produtos e Serviços',
+    menuItemLinks: [
+      {
+        name: 'Painel privado',
+        href: 'http://admin.projetoconfia.info/',
+        target: '_blank',
+      },
+      {
+        name: 'Monitoramento de notícias',
+        href: '/produtos-e-servicos/monitoramento-de-noticias',
+      },
+      {
+        name: 'Apoia à capacitação',
+        href:
+          '/produtos-e-servicos/apoio-a-capacitacao-na-identificacao-de-fake-news',
+      },
+      {
+        name: 'Jogo da trilha',
+        href: 'http://memore-net.com/jogos/trilha/',
+        target: '_blank',
       },
     ],
     placement: 'bottom',
