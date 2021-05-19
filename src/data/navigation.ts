@@ -1,5 +1,4 @@
-import { SubMenuProps } from '../components/sub-menu'
-import { NavigationMenuItemProps } from '../components/navigation-menu'
+import { NavigationMenuItemProps, SubMenuProps } from '@/types'
 
 export default [
   {
