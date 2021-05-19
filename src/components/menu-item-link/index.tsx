@@ -7,6 +7,7 @@ import {
   makeStyles,
   Theme,
 } from '@material-ui/core'
+import { useRouter } from 'next/router'
 
 export type MenuItemLinkProps = {
   onClick?: () => unknown
@@ -15,14 +16,20 @@ export type MenuItemLinkProps = {
   target?: string
 } & Pick<ListItemProps, 'color'>
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    link: {
-      textDecoration: 'none',
-      color: theme.palette.text.primary,
-    },
-  })
-)
+const useStyles = (isActive = false) =>
+  makeStyles((theme: Theme) =>
+    createStyles({
+      link: {
+        textDecoration: 'none',
+        color: theme.palette.text.primary,
+      },
+      active: {
+        borderBottom: isActive
+          ? `2px solid ${theme.palette.secondary.main}`
+          : '',
+      },
+    })
+  )()
 
 const MenuItemLink = ({
   onClick = undefined,
@@ -31,12 +38,18 @@ const MenuItemLink = ({
   color,
   target = '_self',
 }: MenuItemLinkProps) => {
-  const classes = useStyles()
+  const router = useRouter()
+  const classes = useStyles(router.asPath === href)
 
   return (
     <NextLink href={href} passHref>
       <a className={classes.link} target={target}>
-        <ListItem button color={color} onClick={onClick}>
+        <ListItem
+          className={classes.active}
+          button
+          color={color}
+          onClick={onClick}
+        >
           <ListItemText primary={name} />
         </ListItem>
       </a>

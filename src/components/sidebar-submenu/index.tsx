@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 import {
   ListItem,
   ListItemText,
@@ -16,7 +17,9 @@ export type SideBarSubMenuProps = {
 }
 
 const SideBarSubMenu = ({ name, items }: SideBarSubMenuProps) => {
-  const [isOpen, setIsOpen] = useState(false)
+  const { asPath } = useRouter()
+  const isSomeLinkActive = items.some(({ href }) => asPath === href)
+  const [isOpen, setIsOpen] = useState(isSomeLinkActive)
   const handleClick = () => setIsOpen(!isOpen)
 
   return (
