@@ -3,7 +3,6 @@ import type { AppProps } from 'next/app'
 import { ComponentType } from 'react'
 import { ThemeProvider, CssBaseline } from '@material-ui/core'
 
-import '../styles/globals.css'
 import '../styles/markdown.css'
 import theme from '../styles/theme'
 

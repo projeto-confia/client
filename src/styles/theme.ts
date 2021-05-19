@@ -1,10 +1,22 @@
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core'
 
+const fontFamily = ['PT Sans Caption', '-apple-system', 'Segoe UI'].join(',')
+
 const theme = () =>
   responsiveFontSizes(
     createMuiTheme({
       typography: {
-        htmlFontSize: 13,
+        htmlFontSize: 12,
+        fontFamily,
+        h1: {
+          fontSize: '3rem',
+        },
+        h2: {
+          fontSize: '2.5rem',
+        },
+        h3: {
+          fontSize: '2rem',
+        },
       },
       palette: {
         primary: {
@@ -21,8 +33,6 @@ const theme = () =>
               WebkitFontSmoothing: 'auto',
               padding: 0,
               margin: 0,
-              fontFamily:
-                'Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
               backgroundImage: 'url(/images/bg-texture.png)',
             },
           },
