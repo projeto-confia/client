@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Container, AppBar, Toolbar, Typography } from '@material-ui/core'
+import { AppBar, Toolbar, Typography } from '@material-ui/core'
 
 import useStyles from './styled'
 
@@ -17,26 +17,24 @@ const Header = ({ title = 'CONFIA', children }: Props) => {
 
   return (
     <AppBar position="fixed" className={classes.root} color="default">
-      <Container maxWidth="lg">
-        <Toolbar variant="regular" component="nav">
-          <Link href="/">
-            <a className={classes.logoLink}>
-              <Image
-                src="/images/logo.png"
-                alt="Logo do projeto CONFIA"
-                width={50}
-                height={50}
-                loading="eager"
-              />
+      <Toolbar variant="regular" component="nav">
+        <Link href="/">
+          <a className={classes.logoLink}>
+            <Image
+              src="/images/logo.png"
+              alt="Logo do projeto CONFIA"
+              width={50}
+              height={50}
+              loading="eager"
+            />
 
-              <Typography variant="h4" component="h1" className={classes.title}>
-                {title}
-              </Typography>
-            </a>
-          </Link>
-          <div className={classes.content}>{children}</div>
-        </Toolbar>
-      </Container>
+            <Typography variant="h4" component="h1" className={classes.title}>
+              {title}
+            </Typography>
+          </a>
+        </Link>
+        <div className={classes.content}>{children}</div>
+      </Toolbar>
     </AppBar>
   )
 }
