@@ -24,9 +24,10 @@ const useStyles = (isActive = false) =>
         color: theme.palette.text.primary,
       },
       active: {
-        borderBottom: isActive
-          ? `2px solid ${theme.palette.secondary.main}`
+        background: isActive
+          ? `linear-gradient(to left, ${theme.palette.primary.main},${theme.palette.secondary.main}) left bottom no-repeat`
           : '',
+        backgroundSize: '100% 2.5px',
       },
     })
   )()
