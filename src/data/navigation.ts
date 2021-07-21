@@ -13,8 +13,8 @@ export default [
         href: '/subprojetos/automata',
       },
       {
-        name: 'JED',
-        href: '/subprojetos/jed',
+        name: 'JEDi',
+        href: '/subprojetos/jedi',
       },
     ],
     placement: 'bottom',
