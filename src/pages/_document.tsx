@@ -1,3 +1,5 @@
+// noinspection HtmlUnknownTarget
+
 import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheets } from '@material-ui/core/styles'
@@ -14,14 +16,9 @@ export default class AppDocument extends Document {
           <meta name="theme-color" content={this.theme.palette.primary.main} />
           <meta name="application-name" content="CONFIA" />
           <meta name="description" content="Compartilhe com segurança" />
-          <link rel="apple-touch-icon" href="/images/logo192.png"></link>
+          <link rel="apple-touch-icon" href="/images/logo192.png" />
           <link rel="icon" href="/favicon.ico" />
           <link rel="manifest" href="/manifest.json" />
-          <link rel="preconnect" href="https://fonts.gstatic.com"></link>
-          <link
-            href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap"
-            rel="stylesheet"
-          ></link>
           <meta
             name="description"
             content="Compartilhe informações com segurança de que são verdadeiras."

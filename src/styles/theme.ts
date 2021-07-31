@@ -1,6 +1,11 @@
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core'
 
-const fontFamily = ['PT Sans Caption', '-apple-system', 'Segoe UI'].join(',')
+const fontFamily = [
+  'Sentico Sans',
+  'sans-serif',
+  '-apple-system',
+  'Segoe UI',
+].join(',')
 
 const theme = () =>
   responsiveFontSizes(
