@@ -28,15 +28,6 @@ export default [
         target: '_blank',
       },
       {
-        name: 'Monitoramento de notícias',
-        href: '/produtos-e-servicos/monitoramento-de-noticias',
-      },
-      {
-        name: 'Apoia à capacitação',
-        href:
-          '/produtos-e-servicos/apoio-a-capacitacao-na-identificacao-de-fake-news',
-      },
-      {
         name: 'Jogo da trilha',
         href: 'http://memore-net.com/jogos/trilha/',
         target: '_blank',
