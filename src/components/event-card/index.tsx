@@ -12,7 +12,7 @@ import useStyles from './styled'
 import Media from '../media'
 import Link from 'next/link'
 
-const EventCard = ({ title, media, subtitle }: EventProps) => {
+const EventCard = ({ slug, title, media, subtitle }: EventProps) => {
   const classes = useStyles()
 
   return (
@@ -32,7 +32,7 @@ const EventCard = ({ title, media, subtitle }: EventProps) => {
           )}
         </CardContent>
         <CardActions>
-          <Link href="/" passHref>
+          <Link href={`/eventos/${slug}`} passHref>
             <Button size="small" color="primary">
               Saiba mais
             </Button>

@@ -5,8 +5,8 @@ import { Box, Typography } from '@material-ui/core'
 import { LayoutDefault } from '@/components'
 import { EventCardsList } from '@/containers'
 import { EventsPageProps } from '@/types'
-import client from '../graphql/client'
-import GET_EVENTS_PAGE from '../graphql/queries/getEventsPage'
+import client from '../../graphql/client'
+import GET_EVENTS_PAGE from '../../graphql/queries/getEventsPage'
 
 const Eventos = ({
   commonPageData: { tabTitle },
