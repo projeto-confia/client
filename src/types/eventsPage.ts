@@ -1,8 +1,8 @@
 import { CommonPageDataProps } from './commonPageData'
-import { VideoCardProps } from './videoCard'
+import { EventProps } from './event'
 
 export type EventsPageProps = {
   commonPageData: CommonPageDataProps
   title: string
-  videoCards: VideoCardProps[]
+  events: EventProps[]
 }

@@ -22,4 +22,5 @@ export type MediaProps = {
   alternativeText?: string
   ext?: string
   formats?: MediaFormatsProps
+  mime?: string
 }

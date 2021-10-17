@@ -1,23 +1,26 @@
 const GET_EVENTS_PAGE = /* GraphQL */ `
-  fragment commomPageData on EventsPage {
+  fragment commonPageData on EventsPage {
     commonPageData {
       tabTitle
     }
   }
 
-  fragment videoCards on EventsPage {
-    videoCards {
-      id
-      embedCode
-      description
-    }
-  }
-
-  query GET_EVENTS_PAGE {
+  query EVENTS_PAGE {
     eventsPage {
-      ...commomPageData
+      ...commonPageData
       title
-      ...videoCards
+      events {
+        slug
+        title
+        subtitle
+        media {
+          alternativeText
+          ext
+          formats
+          url
+          mime
+        }
+      }
     }
   }
 `

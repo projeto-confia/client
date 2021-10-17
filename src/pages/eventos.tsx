@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { Box, Typography } from '@material-ui/core'
 
 import { LayoutDefault } from '@/components'
-import { VideoCardsList } from '@/containers'
+import { EventCardsList } from '@/containers'
 import { EventsPageProps } from '@/types'
 import client from '../graphql/client'
 import GET_EVENTS_PAGE from '../graphql/queries/getEventsPage'
@@ -11,7 +11,7 @@ import GET_EVENTS_PAGE from '../graphql/queries/getEventsPage'
 const Eventos = ({
   commonPageData: { tabTitle },
   title,
-  videoCards,
+  events,
 }: EventsPageProps) => {
   return (
     <>
@@ -24,7 +24,7 @@ const Eventos = ({
           <Typography component="h1" variant="h2">
             {title}
           </Typography>
-          <VideoCardsList videoCards={videoCards} />
+          <EventCardsList events={events} />
         </Box>
       </LayoutDefault>
     </>
