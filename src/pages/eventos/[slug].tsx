@@ -46,7 +46,9 @@ const Evento = ({
 type Path = { params: { slug: string } }
 type EventSlug = { slug: string }
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { events } = await client.request(GET_EVENTS_SLUGS)
+  const {
+    eventsPage: { events },
+  } = await client.request(GET_EVENTS_SLUGS)
   const toPath = ({ slug }: EventSlug): Path => ({ params: { slug } })
 
   return {
