@@ -7,12 +7,14 @@ import { LayoutDefault, Markdown } from '@/components'
 import client from '../../graphql/client'
 import GET_EVENTS_SLUGS from '../../graphql/queries/getEventsSlugs'
 import GET_EVENT_BY_SLUG from '../../graphql/queries/getEventBySlug'
+import { format } from '../../utils/dateStringFormat'
 
 const Evento = ({
   commonPageData: { tabTitle },
   title,
   subtitle,
   content,
+  date,
 }: EventProps) => {
   return (
     <>
@@ -22,6 +24,17 @@ const Evento = ({
 
       <LayoutDefault>
         <Box component="section" p={2}>
+          {date && (
+            <Typography
+              component="p"
+              variant="subtitle2"
+              color="textSecondary"
+              gutterBottom
+            >
+              {format(date)}
+            </Typography>
+          )}
+
           <Typography component="h1" variant="h2">
             {title}
           </Typography>
@@ -63,6 +76,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     GET_EVENT_BY_SLUG,
     variables
   )
+
   return { props: { ...event } }
 }
 

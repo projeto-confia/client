@@ -11,8 +11,9 @@ import { EventProps } from '@/types'
 import useStyles from './styled'
 import Media from '../media'
 import Link from 'next/link'
+import { format } from '../../utils/dateStringFormat'
 
-const EventCard = ({ slug, title, media, subtitle }: EventProps) => {
+const EventCard = ({ slug, title, media, subtitle, date }: EventProps) => {
   const classes = useStyles()
 
   return (
@@ -22,6 +23,11 @@ const EventCard = ({ slug, title, media, subtitle }: EventProps) => {
       </CardMedia>
       <div>
         <CardContent>
+          {date && (
+            <Typography component="p" variant="subtitle2" color="textSecondary">
+              {format(date)}
+            </Typography>
+          )}
           <Typography variant="body1" component="p">
             {title}
           </Typography>

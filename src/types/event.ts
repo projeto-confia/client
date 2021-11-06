@@ -8,4 +8,5 @@ export type EventProps = {
   subtitle?: string
   media: MediaProps
   content: string
+  date: string
 }

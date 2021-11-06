@@ -9,10 +9,11 @@ const GET_EVENTS_PAGE = /* GraphQL */ `
     eventsPage {
       ...commonPageData
       title
-      events {
+      events(sort: "date:desc") {
         slug
         title
         subtitle
+        date
         media {
           alternativeText
           ext

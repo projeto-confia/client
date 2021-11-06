@@ -8,6 +8,7 @@ const GET_EVENT_BY_SLUG = /* GraphQL */ `
       title
       subtitle
       content
+      date
     }
   }
 `
