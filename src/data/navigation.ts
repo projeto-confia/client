@@ -45,7 +45,7 @@ export default [
   },
   {
     name: 'Eventos',
-    href: '/eventos',
+    href: '/listagem-eventos/1',
   },
   {
     name: 'Links',

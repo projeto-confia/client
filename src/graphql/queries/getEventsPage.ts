@@ -5,11 +5,18 @@ const GET_EVENTS_PAGE = /* GraphQL */ `
     }
   }
 
-  query EVENTS_PAGE {
+  query EVENTS_PAGE($offset: Int!, $limit: Int!) {
+    eventsConnection {
+      aggregate {
+        count
+        totalCount
+      }
+    }
     eventsPage {
       ...commonPageData
+      eventsPerPage
       title
-      events(sort: "date:desc") {
+      events(sort: "date:desc", limit: $limit, start: $offset) {
         slug
         title
         subtitle
