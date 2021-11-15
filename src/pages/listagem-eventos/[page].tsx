@@ -24,7 +24,6 @@ const Eventos = ({
   events,
   links,
 }: EventsPageProps & Pagination) => {
-  console.log(links)
   return (
     <>
       <Head>
