@@ -4,7 +4,7 @@ import { resolveUrl } from '../../utils/getImageUrl'
 import { MediaProps } from '@/types'
 
 const Video = (media: MediaProps) => (
-  <Box maxWidth="100%" clone>
+  <Box maxWidth="100%" width="100%" clone>
     <video controls>
       <source
         src={resolveUrl(media.url)}
