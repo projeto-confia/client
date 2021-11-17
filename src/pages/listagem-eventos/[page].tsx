@@ -48,18 +48,21 @@ const Eventos = ({
 }
 
 const DEFAULT_LIMIT = 10
-
-export const getStaticPaths: GetStaticPaths = async () => {
+const getDefaultEventPage = () => {
   const variables = {
     offset: 0,
     limit: 10,
   }
+  return client.request(GET_EVENTS_PAGE, variables)
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
   const {
     eventsConnection: {
       aggregate: { count },
     },
     eventsPage: { eventsPerPage },
-  } = await client.request(GET_EVENTS_PAGE, variables)
+  } = await getDefaultEventPage()
 
   const pages = Math.ceil(count / eventsPerPage)
 
@@ -76,9 +79,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const page = +(params?.page || 1)
-  const limit = +(params?.eventsPerPage || DEFAULT_LIMIT)
+  const {
+    eventsPage: { eventsPerPage },
+  } = await getDefaultEventPage()
 
+  const page = +(params?.page || 1)
+  const limit = eventsPerPage || DEFAULT_LIMIT
   const pagination: Pagination = {
     page,
     limit,
@@ -91,6 +97,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
     eventsPage,
   } = await client.request(GET_EVENTS_PAGE, pagination)
+  console.log(pagination, count, params)
 
   const pages = Math.ceil(count / limit)
 
