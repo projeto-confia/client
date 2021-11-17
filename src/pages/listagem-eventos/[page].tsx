@@ -97,7 +97,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
     eventsPage,
   } = await client.request(GET_EVENTS_PAGE, pagination)
-  console.log(pagination, count, params)
 
   const pages = Math.ceil(count / limit)
 
