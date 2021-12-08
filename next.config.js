@@ -12,6 +12,7 @@ module.exports = withPWA({
       'localhost',
       'confia-api.herokuapp.com',
       'stgconfiadev.blob.core.windows.net',
+      'res.cloudinary.com',
     ],
   },
 })
