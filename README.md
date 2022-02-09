@@ -24,6 +24,7 @@ yarn dev
 Acesse [http://localhost:3000](http://localhost:3000) para carregar a aplicação.
 
 Caso ocorra erro de permissão do lado do servidor, lembre de mudar as permissões dos recursos no CMS para public.
+Lembre-se também que é necessário cadastrar os dados das páginas no CMS.
 
 ## Tecnologia empregada
 
