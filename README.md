@@ -18,7 +18,7 @@ yarn
 ```
 ### 2. Rodar o projeto
 ```bash
-yarn  dev
+yarn dev
 ```
 
 Acesse [http://localhost:3000](http://localhost:3000) para carregar a aplicação.
