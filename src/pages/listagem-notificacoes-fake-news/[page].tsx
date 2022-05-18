@@ -3,10 +3,10 @@ import Head from 'next/head'
 import { Box, Typography } from '@material-ui/core'
 
 import { LayoutDefault, Pagination } from '@/components'
-import { EventCardsList } from '@/containers'
-import { EventsPageProps } from '@/types'
+import { FakeNewsNotificationList } from '@/containers'
 import client from '../../graphql/client'
-import GET_EVENTS_PAGE from '../../graphql/queries/getEventsPage'
+import GET_FAKE_NEWS_NOTIFICATIONS_PAGE from 'src/graphql/queries/getFakeNewsNotificationsPage'
+import { FakeNewsNotificationPageProps } from 'src/types/fakeNewsNotificationPage'
 
 type Pagination = {
   page: number
@@ -18,16 +18,15 @@ type Pagination = {
   }[]
 }
 
-const Eventos = ({
-  commonPageData: { tabTitle },
+const ListagemNotificacoesFakeNews = ({
   title,
-  events,
+  fakeNewsNotifications,
   links,
-}: EventsPageProps & Pagination) => {
+}: FakeNewsNotificationPageProps & Pagination) => {
   return (
     <>
       <Head>
-        <title>{tabTitle}</title>
+        <title>{title} | CONFIA</title>
       </Head>
 
       <LayoutDefault>
@@ -35,7 +34,9 @@ const Eventos = ({
           <Typography component="h1" variant="h2">
             {title}
           </Typography>
-          <EventCardsList events={events} />
+          <FakeNewsNotificationList
+            fakeNewsNotifications={fakeNewsNotifications}
+          />
         </Box>
         {links && links?.length > 1 && (
           <Box display="flex" justifyContent="center">
@@ -48,23 +49,22 @@ const Eventos = ({
 }
 
 const DEFAULT_LIMIT = 10
-const getDefaultEventPage = () => {
+const getPageWithDefaultParams = () => {
   const variables = {
     offset: 0,
-    limit: 10,
+    limit: DEFAULT_LIMIT,
   }
-  return client.request(GET_EVENTS_PAGE, variables)
+  return client.request(GET_FAKE_NEWS_NOTIFICATIONS_PAGE, variables)
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const {
-    eventsConnection: {
+    fakeNewsNotificationsConnection: {
       aggregate: { count },
     },
-    eventsPage: { eventsPerPage },
-  } = await getDefaultEventPage()
+  } = await getPageWithDefaultParams()
 
-  const pages = Math.ceil(count / eventsPerPage)
+  const pages = Math.ceil(count / DEFAULT_LIMIT)
 
   const paths = [...Array(pages).keys()].map((i) => ({
     params: {
@@ -79,40 +79,35 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const {
-    eventsPage: { eventsPerPage },
-  } = await getDefaultEventPage()
-
   const page = +(params?.page || 1)
-  const limit = eventsPerPage || DEFAULT_LIMIT
   const pagination: Pagination = {
     page,
-    limit,
-    offset: (+page - 1) * limit,
+    limit: DEFAULT_LIMIT,
+    offset: (page - 1) * DEFAULT_LIMIT,
   }
 
   const {
-    eventsConnection: {
+    fakeNewsNotificationsConnection: {
       aggregate: { count },
     },
-    eventsPage,
-  } = await client.request(GET_EVENTS_PAGE, pagination)
+    fakeNewsNotificationList,
+  } = await client.request(GET_FAKE_NEWS_NOTIFICATIONS_PAGE, pagination)
 
-  const pages = Math.ceil(count / limit)
+  const pages = Math.ceil(count / DEFAULT_LIMIT)
 
   const links = [...Array(pages).keys()]
     .map((i) => i + 1)
     .map((i) => ({
       active: i === page,
-      url: `/listagem-eventos/${i}`,
+      url: `/listagem-notificacoes-fake-news/${i}`,
     }))
 
   return {
     props: {
-      ...eventsPage,
+      ...fakeNewsNotificationList,
       links,
     },
   }
 }
 
-export default Eventos
+export default ListagemNotificacoesFakeNews

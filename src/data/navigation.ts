@@ -36,6 +36,10 @@ export default [
     placement: 'bottom',
   } as SubMenuProps,
   {
+    name: 'Fake News detectadas',
+    href: '/listagem-notificacoes-fake-news/1',
+  },
+  {
     name: 'Colaboradores',
     href: '/colaboradores',
   },
