@@ -2,9 +2,27 @@
   width: 100%;
 }
 
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .md p {
   font-size: 1.208rem;
-  font-family: "PT Sans Caption", "Helvetica", "Arial", sans-serif;
+  font-family: 'PT Sans Caption', 'Helvetica', 'Arial', sans-serif;
   font-weight: 400;
   line-height: 1.75;
   letter-spacing: 0.00938em;
@@ -12,7 +30,7 @@
 
 .md h2 {
   font-size: 2.375rem;
-  font-family: "PT Sans Caption", "Helvetica", "Arial", sans-serif;
+  font-family: 'PT Sans Caption', 'Helvetica', 'Arial', sans-serif;
   font-weight: 300;
   line-height: 1.2;
   letter-spacing: -0.00833em;
