@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { GetStaticProps } from 'next'
 import { Box, Typography } from '@material-ui/core'
 
-import { LayoutDefault, Markdown, Media } from '@/components'
+import { LayoutDefault, Markdown } from '@/components'
 import { SubProjectPageProps } from '@/types'
 
 import client from '../../graphql/client'
@@ -13,7 +13,6 @@ const Automata = ({
   commonPageData: { tabTitle },
   title,
   subtitle,
-  media,
   content,
 }: SubProjectPageProps) => (
   <>
@@ -36,10 +35,6 @@ const Automata = ({
             {subtitle}
           </Typography>
         </header>
-
-        <Box margin="2rem auto" maxWidth="fit-content">
-          <Media {...media} />
-        </Box>
 
         <Markdown content={content} />
       </Box>
